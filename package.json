@@ -62,7 +62,8 @@
       "!./src/index.tsx",
       "!./src/serviceWorker.ts",
       "!./src/**/index.ts",
-      "!./src/**/*.d.ts"
+      "!./src/**/*.d.ts",
+      "not dead"
     ],
     "coverageReporters": [
       "text"
@@ -74,7 +75,6 @@
   "browserslist": {
     "production": [
       ">0.2%",
-      "not dead",
       "not op_mini all"
     ],
     "development": [
