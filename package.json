@@ -47,7 +47,7 @@
     "ioc",
     "jest",
     "jest-fetch-mock",
-    "json-server",
+    "json-server",a
     "persistence",
     "react",
     "react-hooks",

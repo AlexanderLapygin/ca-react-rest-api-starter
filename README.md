@@ -39,15 +39,10 @@ Part of the [clean-architecture-counter-starters](https://github.com/softspiders
 [Alexander Lapygin](https://github.com/AlexanderLapygin) <<alexanderlapygin@gmail.com>>
 
 ---
-## Inspired by
-
-[Eduardo Moroni](https://github.com/eduardomoroni)'s [*react-clean-architecture*](https://github.com/eduardomoroni/react-clean-architecture)
-
----
 
 <p align="center">
   <a href="https://github.com/softspider">
-    <img src="./app/diagrams/packages.uml.svg" width="600"/>
+    <img src="./diagrams/packages.uml.svg" width="600"/>
   </a>
   </br>
   <b>Package structure</b>
@@ -55,21 +50,11 @@ Part of the [clean-architecture-counter-starters](https://github.com/softspiders
 
 ---
 
-## Run
+## Running locally
 
-```sh
-# API
-cd api
-npm install
-npm start
+See [that repository](https://github.com/softspiders/clean-architecture-counter-starters/tree/clean-architecture-counter-react-hooks-fullstack-jest-ts-starter)
 
-# App
-cd app
-npm install
-npm start
-```
-
-## Test
+## Run tests
 
 ```sh
 cd app
