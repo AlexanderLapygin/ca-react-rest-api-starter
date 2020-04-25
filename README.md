@@ -29,10 +29,6 @@ In separate browser tabs do:
 - typescript
 - unit-test
 
-## Parents
-
-[**- db, jest-fetch-mock, rest, react-testing-library, test-coverage, storyshot**](https://github.com/softspiders/clean-architecture-counter-starters/tree/clean-architecture-counter-react-hooks-ts-starter)
-
 ---
 ## Author
 
