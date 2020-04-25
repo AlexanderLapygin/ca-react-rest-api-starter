@@ -57,13 +57,11 @@ See [that repository](https://github.com/softspiders/clean-architecture-counter-
 ## Run tests
 
 ```sh
-cd app
 npm run test
 ```
 
 test with coverage:
 ```sh
-cd app
 npm run test:coverage
 ```
 
