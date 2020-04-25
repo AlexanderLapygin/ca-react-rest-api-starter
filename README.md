@@ -6,8 +6,10 @@ Part of the [clean-architecture-counter-starters](https://github.com/softspiders
 
 ---
 ## Demo
+Demo and server are both hosted on the Codesandbox.
 
-1. [Warmup Server on Codesandbox](https://xg4qv.sse.codesandbox.io)
+In separate browser tabs do:
+1. [Start server](https://xg4qv.sse.codesandbox.io)
 2. [Start demo](https://pzpw2.csb.app/)
 
 ---
