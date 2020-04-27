@@ -4,7 +4,7 @@
 
 ---
 ## Demo
-Demo and server are both hosted on the [Codesandbox](https://codesandbox.io/).
+Demo and server are both hosted on the *Codesandbox*.
 
 In separate browser tabs do:
 1. [Start server](https://xg4qv.sse.codesandbox.io)
