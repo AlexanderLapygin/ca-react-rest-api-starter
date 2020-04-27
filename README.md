@@ -63,5 +63,6 @@ npm run test:coverage
 
 ---
 
-## :memo: License
-[MIT](./LICENSE)
+## License
+
+Licensed under the [MIT license](./LICENSE).
