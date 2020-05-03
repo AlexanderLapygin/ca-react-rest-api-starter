@@ -11,17 +11,17 @@ export interface CounterUseCaseOut {
 }
 
 export class CounterInteractor implements CounterUseCaseIn {
-  constructor(private counterOut: CounterUseCaseOut) {}
+  constructor(private counterUseCaseOut: CounterUseCaseOut) {}
 
   async getCounter(): Promise<number> {
-    const newCounter: Counter = await this.counterOut.getCounter()
+    const newCounter: Counter = await this.counterUseCaseOut.getCounter()
     return newCounter.counter
   }
 
   async increment(): Promise<number> {
-    const currentCounter: Counter = await this.counterOut.getCounter()
+    const currentCounter: Counter = await this.counterUseCaseOut.getCounter()
     const newCounter: Counter = new Counter(currentCounter.counter + 1)
-    const resultCounter: Counter = await this.counterOut.updateCounter(
+    const resultCounter: Counter = await this.counterUseCaseOut.updateCounter(
       newCounter
     )
 
