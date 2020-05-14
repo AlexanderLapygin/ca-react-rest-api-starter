@@ -3,6 +3,12 @@
 ## Fullstack counter-app starter on *React* in *TypeScript* that follows ***Clean Architecture*** principles
 
 ---
+
+## Children
+[**- db, fullstack, jest, jest-fetch-mock, json-server, react, react-hooks, react-testing-library, rest**](https://github.com/softspiders/cleanarchitecture-ts-starter)
+
+---
+
 ## Demo
 Demo and server are both hosted on the *Codesandbox*.
 
