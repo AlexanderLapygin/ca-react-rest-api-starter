@@ -4,20 +4,6 @@
 
 ---
 
-## Parents
-[**- db, fullstack, jest, jest-fetch-mock, json-server, react, react-hooks, react-testing-library, rest**](https://github.com/softspiders/cleanarchitecture-ts-starter)
-
----
-
-## Demo
-Demo and server are both hosted on the *Codesandbox*.
-
-In separate browser tabs do:
-1. [Start server](https://xg4qv.sse.codesandbox.io)
-2. [Start demo](https://pzpw2.csb.app/)
-
----
-
 ## Feature tags
 - clean-architecture
 - counter-app
@@ -34,6 +20,20 @@ In separate browser tabs do:
 - test-coverage
 - typescript
 - unit-test
+
+---
+
+## Parents
+[**- db, fullstack, jest, jest-fetch-mock, json-server, react, react-hooks, react-testing-library, rest**](https://github.com/softspiders/cleanarchitecture-ts-starter)
+
+---
+
+## Demo
+Demo and server are both hosted on the *Codesandbox*.
+
+In separate browser tabs do:
+1. [Start server](https://xg4qv.sse.codesandbox.io)
+2. [Start demo](https://pzpw2.csb.app/)
 
 ---
 ## Author
