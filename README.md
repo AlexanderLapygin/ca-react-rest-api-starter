@@ -9,11 +9,8 @@ It is the client part of the [Fullstack counter-app starter on React in TypeScri
 ## Feature tags
 - clean-architecture
 - counter-app
-- db
-- fullstack
 - jest
 - jest-fetch-mock
-- json-server
 - react
 - react-hooks
 - react-testing-library
