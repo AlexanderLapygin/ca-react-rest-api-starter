@@ -2,7 +2,7 @@
 
 ## Counter-app on REST API starter on React in TypeScript that follows Clean Architecture principles
 
-It is the client part of the [Fullstack counter-app starter on React in TypeScript that follows Clean Architecture principles](https://github.com/softspiders/clean-architecture-counter-starters/tree/clean-architecture-counter-react-hooks-fullstack-jest-ts-starter) starter
+It is the client part of the [Fullstack counter-app starter on React in TypeScript that follows Clean Architecture principles](https://github.com/softspiders/clean-architecture-counter-starters/tree/clean-architecture-counter-react-hooks-fullstack-jest-ts-starter).
 
 ---
 
