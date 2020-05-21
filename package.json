@@ -38,7 +38,7 @@
     "eject": "react-scripts eject",
     "lint": "eslint './src/**/*.{ts,tsx}'",
     "lint:fix": "eslint --fix './src/**/*.{ts,tsx}'",
-    "start": "mdx-deck deck/ru/deck.mdx"
+    "start-deck": "mdx-deck deck/ru/deck.mdx"
   },
   "keywords": [
     "adapter",
