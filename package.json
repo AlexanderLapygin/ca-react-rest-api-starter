@@ -20,11 +20,13 @@
     "@testing-library/react-hooks": "^3.2.1",
     "@typescript-eslint/eslint-plugin": "^2.2.0",
     "@typescript-eslint/parser": "^2.2.0",
+    "code-surfer": "3.1.1",
     "eslint": "^6.4.0",
     "eslint-config-prettier": "^6.3.0",
     "eslint-config-react-app": "^5.0.1",
     "eslint-plugin-prettier": "^3.1.0",
     "jest-fetch-mock": "^3.0.3",
+    "mdx-deck": "3.0.10",
     "prettier": "^1.18.2",
     "react-test-renderer": "^16.9.0"
   },
@@ -35,7 +37,8 @@
     "test:coverage": "react-scripts test --watchAll=false --coverage",
     "eject": "react-scripts eject",
     "lint": "eslint './src/**/*.{ts,tsx}'",
-    "lint:fix": "eslint --fix './src/**/*.{ts,tsx}'"
+    "lint:fix": "eslint --fix './src/**/*.{ts,tsx}'",
+    "start": "mdx-deck deck/ru/deck.mdx"
   },
   "keywords": [
     "adapter",
