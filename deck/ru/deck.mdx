@@ -31,6 +31,8 @@ import caLayersNet from "./diagrams/caLayersNet.svg";
 
 import caOSI from "./diagrams/caOSI.svg";
 import caOSI1 from "./diagrams/caOSI1.svg";
+import caOSIFlowControl from "./diagrams/caOSIFlowControl.svg";
+import caOSIAppInterconnection from "./diagrams/caOSIAppInterconnection.svg";
 
 <Head>
   <title>Счётчик на Чистой Архитектуре</title>
@@ -134,6 +136,12 @@ import caOSI1 from "./diagrams/caOSI1.svg";
 
 <Image src={caOSI} style={{ width: '101vw', height: '100vh'}}/>
 
+<Notes>
+
+Вспомним OSI - семировневую сетевую модель
+
+</Notes>
+
 ---
 
 <Image src={caOSI1} style={{ width: '101vw', height: '100vh'}}/>
@@ -141,6 +149,27 @@ import caOSI1 from "./diagrams/caOSI1.svg";
 <Notes>
 
 Метафора морских глубин - тем глубже, тем темнее и стабильнее
+
+</Notes>
+
+---
+
+<Image src={caOSIFlowControl} style={{ width: '101vw', height: '100vh'}}/>
+
+<Notes>
+
+Поток управления - через промежуточные слои - от приложения к приложению
+
+</Notes>
+
+---
+
+<Image src={caOSIAppInterconnection} style={{ width: '101vw', height: '100vh'}}/>
+
+<Notes>
+
+У приложений два главных интерфейса взаимодействия. Один - высокоуровневый - между собой, другой - интерфейс
+взаимодействия с более низким, в данном случае, слоем *Presentation*. 
 
 </Notes>
 
