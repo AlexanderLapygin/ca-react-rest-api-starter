@@ -1,4 +1,3 @@
-import { CounterIncrement } from '../CounterIncrement'
 import { Counter } from '../../entities'
 import { AdapterFactory } from '../../../adapters'
 
