@@ -12,7 +12,7 @@ export const AppContext = createContext({} as ContextProps)
 const adapterFactory = new AdapterFactory()
 
 export const AppFactory = (): JSX.Element => {
-  const counterPresenter = usePresenter(adapterFactory.getCounterUseCaseIn())
+  const counterPresenter = usePresenter(adapterFactory.getCounterIncrementIn())
   return (
     <AppContext.Provider value={{ counterPresenter }}>
       <App />

@@ -1,10 +1,10 @@
 import { Counter } from '../../entities'
 import { AdapterFactory } from '../../../adapters'
 
-describe('CounterUseCase', () => {
+describe('CounterIncrement', () => {
   const COUNTER_VALUE = 99
   const SOME_COUNTER = new Counter(-1)
-  describe('CounterUseCaseIn', () => {
+  describe('CounterIncrementIn', () => {
     let useCaseFactory: AdapterFactory
     beforeAll(() => {
       useCaseFactory = new AdapterFactory()
@@ -12,9 +12,9 @@ describe('CounterUseCase', () => {
     describe('getCounter()', () => {
       it('should return right value', async () => {
         const getCounterSpy = jest
-          .spyOn(useCaseFactory.getCounterUseCaseOut(), 'getCounter')
+          .spyOn(useCaseFactory.getCounterIncrementOut(), 'getCounter')
           .mockResolvedValue(new Counter(COUNTER_VALUE))
-        expect(await useCaseFactory.getCounterUseCaseIn().getCounter()).toBe(
+        expect(await useCaseFactory.getCounterIncrementIn().getCounter()).toBe(
           COUNTER_VALUE
         )
 
@@ -25,14 +25,14 @@ describe('CounterUseCase', () => {
     describe('increment()', () => {
       it('should call updateCounter with right value', async () => {
         const getCounterSpy = jest
-          .spyOn(useCaseFactory.getCounterUseCaseOut(), 'getCounter')
+          .spyOn(useCaseFactory.getCounterIncrementOut(), 'getCounter')
           .mockResolvedValue(new Counter(COUNTER_VALUE))
 
         const updateCounterSpy = jest
-          .spyOn(useCaseFactory.getCounterUseCaseOut(), 'updateCounter')
+          .spyOn(useCaseFactory.getCounterIncrementOut(), 'updateCounter')
           .mockResolvedValue(SOME_COUNTER)
 
-        await useCaseFactory.getCounterUseCaseIn().increment()
+        await useCaseFactory.getCounterIncrementIn().increment()
 
         expect(updateCounterSpy).toHaveBeenCalledTimes(1)
         expect(updateCounterSpy).toHaveBeenCalledWith(
@@ -44,14 +44,14 @@ describe('CounterUseCase', () => {
       })
       it('should return right value', async () => {
         const getCounterSpy = jest
-          .spyOn(useCaseFactory.getCounterUseCaseOut(), 'getCounter')
+          .spyOn(useCaseFactory.getCounterIncrementOut(), 'getCounter')
           .mockResolvedValue(new Counter(COUNTER_VALUE))
 
         const updateCounterSpy = jest
-          .spyOn(useCaseFactory.getCounterUseCaseOut(), 'updateCounter')
+          .spyOn(useCaseFactory.getCounterIncrementOut(), 'updateCounter')
           .mockResolvedValue(new Counter(COUNTER_VALUE + 1))
 
-        expect(await useCaseFactory.getCounterUseCaseIn().increment()).toEqual(
+        expect(await useCaseFactory.getCounterIncrementIn().increment()).toEqual(
           COUNTER_VALUE + 1
         )
 

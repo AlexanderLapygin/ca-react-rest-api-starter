@@ -10,15 +10,17 @@ export class AdapterFactory {
   private readonly counterIncrementOut: CounterRestGateway
 
   constructor() {
-    this.counterIncrementOut = new CounterRestGateway(`${process.env.REACT_APP_API_URL}`)
+    this.counterIncrementOut = new CounterRestGateway(
+      `${process.env.REACT_APP_API_URL}`
+    )
     this.counterIncrementIn = new CounterIncrement(this.counterIncrementOut)
   }
 
-  getCounterUseCaseIn(): CounterIncrementIn {
+  getCounterIncrementIn(): CounterIncrementIn {
     return this.counterIncrementIn
   }
 
-  getCounterUseCaseOut(): CounterIncrementOut {
+  getCounterIncrementOut(): CounterIncrementOut {
     return this.counterIncrementOut
   }
 }
