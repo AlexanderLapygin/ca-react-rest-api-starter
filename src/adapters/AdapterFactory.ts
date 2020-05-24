@@ -6,19 +6,19 @@ import {
 import { CounterRestGateway } from './gateways'
 
 export class AdapterFactory {
-  private readonly counterUseCaseIn: CounterIncrementIn
-  private readonly counterUseCaseOut: CounterRestGateway
+  private readonly counterIncrementIn: CounterIncrementIn
+  private readonly counterIncrementOut: CounterRestGateway
 
   constructor() {
-    this.counterUseCaseOut = new CounterRestGateway(`${process.env.REACT_APP_API_URL}`)
-    this.counterUseCaseIn = new CounterIncrement(this.counterUseCaseOut)
+    this.counterIncrementOut = new CounterRestGateway(`${process.env.REACT_APP_API_URL}`)
+    this.counterIncrementIn = new CounterIncrement(this.counterIncrementOut)
   }
 
   getCounterUseCaseIn(): CounterIncrementIn {
-    return this.counterUseCaseIn
+    return this.counterIncrementIn
   }
 
   getCounterUseCaseOut(): CounterIncrementOut {
-    return this.counterUseCaseOut
+    return this.counterIncrementOut
   }
 }
