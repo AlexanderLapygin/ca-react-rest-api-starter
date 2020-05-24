@@ -5,7 +5,6 @@ export interface CounterUseCaseIn {
   increment(): Promise<number>
 }
 
-// Required
 export interface CounterUseCaseOut {
   getCounter(): Promise<Counter>
   updateCounter(counter: Counter): Promise<Counter>
