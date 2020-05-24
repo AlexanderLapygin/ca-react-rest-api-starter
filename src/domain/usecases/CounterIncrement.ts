@@ -10,7 +10,7 @@ export interface CounterUseCaseOut {
   updateCounter(counter: Counter): Promise<Counter>
 }
 
-export class CounterUseCase implements CounterUseCaseIn {
+export class CounterIncrement implements CounterUseCaseIn {
   constructor(private counterUseCaseOut: CounterUseCaseOut) {}
 
   async getCounter(): Promise<number> {

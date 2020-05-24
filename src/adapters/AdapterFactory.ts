@@ -1,5 +1,5 @@
 import {
-  CounterUseCase,
+  CounterIncrement,
   CounterUseCaseIn,
   CounterUseCaseOut
 } from '../domain/usecases'
@@ -11,7 +11,7 @@ export class AdapterFactory {
 
   constructor() {
     this.counterUseCaseOut = new CounterRestGateway(`${process.env.REACT_APP_API_URL}`)
-    this.counterUseCaseIn = new CounterUseCase(this.counterUseCaseOut)
+    this.counterUseCaseIn = new CounterIncrement(this.counterUseCaseOut)
   }
 
   getCounterUseCaseIn(): CounterUseCaseIn {

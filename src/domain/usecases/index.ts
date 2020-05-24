@@ -1,1 +1,1 @@
-export * from './CounterUseCase'
+export * from './CounterIncrement'
