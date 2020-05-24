@@ -1,4 +1,4 @@
-import { CounterInteractor } from '../CounterInteractor'
+import { CounterUseCase } from '../CounterUseCase'
 import { Counter } from '../../entities'
 import { AdapterFactory } from '../../../adapters'
 
