@@ -8,7 +8,7 @@ describe('CounterUseCase', () => {
   describe('CounterUseCaseIn', () => {
     let useCaseFactory: AdapterFactory
     beforeAll(() => {
-      useCaseFactory = new AdapterFactory('someUrl')
+      useCaseFactory = new AdapterFactory()
     })
     describe('getCounter()', () => {
       it('should return right value', async () => {
