@@ -1,11 +1,11 @@
 import { renderHook, act } from '@testing-library/react-hooks'
 import { usePresenter } from '../usePresenter'
-import { CounterUseCaseIn } from '../../../domain/usecases'
+import { CounterIncrementIn } from '../../../domain/usecases'
 
 describe('usePresenter', () => {
   const COUNTER_VALUE = 99
 
-  class CounterUseCaseInMock implements CounterUseCaseIn {
+  class CounterUseCaseInMock implements CounterIncrementIn {
     private _count = COUNTER_VALUE
 
     getCounter(): Promise<number> {
@@ -46,7 +46,7 @@ describe('usePresenter', () => {
   })
 
   it('should print error', async () => {
-    class CounterUseCaseInErrorMock implements CounterUseCaseIn {
+    class CounterUseCaseInErrorMock implements CounterIncrementIn {
       getCounter(): Promise<number> {
         return Promise.resolve(0)
       }

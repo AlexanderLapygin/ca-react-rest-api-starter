@@ -1,6 +1,6 @@
 import { Counter } from '../entities'
 
-export interface CounterUseCaseIn {
+export interface CounterIncrementIn {
   getCounter(): Promise<number>
   increment(): Promise<number>
 }
@@ -10,7 +10,7 @@ export interface CounterUseCaseOut {
   updateCounter(counter: Counter): Promise<Counter>
 }
 
-export class CounterIncrement implements CounterUseCaseIn {
+export class CounterIncrement implements CounterIncrementIn {
   constructor(private counterUseCaseOut: CounterUseCaseOut) {}
 
   async getCounter(): Promise<number> {
