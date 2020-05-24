@@ -1,13 +1,13 @@
 import { useState, useCallback, useEffect } from 'react'
 import { CounterIncrementIn } from '../../domain/usecases'
 
-export const usePresenter = (counterUseCaseIn: CounterIncrementIn) => {
+export const usePresenter = (counterIncrementIn: CounterIncrementIn) => {
   const [counter, setCounter] = useState<number>()
 
   useEffect(() => {
     ;(async (): Promise<void> => {
       try {
-        const newCounter: number = await counterUseCaseIn.getCounter()
+        const newCounter: number = await counterIncrementIn.getCounter()
         setCounter(newCounter)
       } catch (error) {
         console.error(error)
@@ -18,12 +18,12 @@ export const usePresenter = (counterUseCaseIn: CounterIncrementIn) => {
 
   const handleIncrement = useCallback(async (): Promise<void> => {
     try {
-      const newCounter: number = await counterUseCaseIn.increment()
+      const newCounter: number = await counterIncrementIn.increment()
       setCounter(newCounter)
     } catch (error) {
       console.error(error)
     }
-  }, [counterUseCaseIn])
+  }, [counterIncrementIn])
 
   return {
     state: {

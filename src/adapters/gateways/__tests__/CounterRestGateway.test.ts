@@ -1,7 +1,7 @@
 import { CounterRestGateway } from '../CounterRestGateway'
 import { Counter } from '../../../domain/entities'
 
-describe('CounterUseCaseOutRestGateway', () => {
+describe('CounterIncrementOutRestGateway', () => {
   const ENDPOINT = 'endpoint'
   const ENDPOINT_URL = `http://${ENDPOINT}`
   const COUNTER_VALUE = 99

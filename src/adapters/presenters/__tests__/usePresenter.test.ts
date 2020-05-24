@@ -5,7 +5,7 @@ import { CounterIncrementIn } from '../../../domain/usecases'
 describe('usePresenter', () => {
   const COUNTER_VALUE = 99
 
-  class CounterUseCaseInMock implements CounterIncrementIn {
+  class CounterIncrementInMock implements CounterIncrementIn {
     private _count = COUNTER_VALUE
 
     getCounter(): Promise<number> {
@@ -22,7 +22,7 @@ describe('usePresenter', () => {
     let _result: any = {}
     await act(async () => {
       const { result } = await renderHook(() =>
-        usePresenter(new CounterUseCaseInMock())
+        usePresenter(new CounterIncrementInMock())
       )
       _result = result
     })
@@ -34,7 +34,7 @@ describe('usePresenter', () => {
 
   it('should increment...', async () => {
     const { result } = renderHook(() =>
-      usePresenter(new CounterUseCaseInMock())
+      usePresenter(new CounterIncrementInMock())
     )
 
     let _result: any = {}
@@ -46,7 +46,7 @@ describe('usePresenter', () => {
   })
 
   it('should print error', async () => {
-    class CounterUseCaseInErrorMock implements CounterIncrementIn {
+    class CounterIncrementInErrorMock implements CounterIncrementIn {
       getCounter(): Promise<number> {
         return Promise.resolve(0)
       }
@@ -57,7 +57,7 @@ describe('usePresenter', () => {
     }
 
     const { result } = renderHook(() =>
-      usePresenter(new CounterUseCaseInErrorMock())
+      usePresenter(new CounterIncrementInErrorMock())
     )
 
     const spy = jest.spyOn(global.console, 'error')
