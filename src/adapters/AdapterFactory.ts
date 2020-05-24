@@ -10,7 +10,10 @@ import {
   CounterResetOut
 } from '../domain/usecases/CounterReset'
 
-import { CounterResetRestGateway, CounterIncrementRestGateway } from './gateways'
+import {
+  CounterResetRestGateway,
+  CounterIncrementRestGateway
+} from './gateways'
 
 export class AdapterFactory {
   private readonly counterIncrementIn: CounterIncrementIn
