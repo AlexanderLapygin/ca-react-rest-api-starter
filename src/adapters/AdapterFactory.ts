@@ -1,7 +1,7 @@
 import {
   CounterIncrement,
   CounterIncrementIn,
-  CounterUseCaseOut
+  CounterIncrementOut
 } from '../domain/usecases'
 import { CounterRestGateway } from './gateways'
 
@@ -18,7 +18,7 @@ export class AdapterFactory {
     return this.counterUseCaseIn
   }
 
-  getCounterUseCaseOut(): CounterUseCaseOut {
+  getCounterUseCaseOut(): CounterIncrementOut {
     return this.counterUseCaseOut
   }
 }

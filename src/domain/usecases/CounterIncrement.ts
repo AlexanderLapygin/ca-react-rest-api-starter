@@ -5,13 +5,13 @@ export interface CounterIncrementIn {
   increment(): Promise<number>
 }
 
-export interface CounterUseCaseOut {
+export interface CounterIncrementOut {
   getCounter(): Promise<Counter>
   updateCounter(counter: Counter): Promise<Counter>
 }
 
 export class CounterIncrement implements CounterIncrementIn {
-  constructor(private counterUseCaseOut: CounterUseCaseOut) {}
+  constructor(private counterUseCaseOut: CounterIncrementOut) {}
 
   async getCounter(): Promise<number> {
     const newCounter: Counter = await this.counterUseCaseOut.getCounter()
