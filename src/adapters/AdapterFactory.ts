@@ -10,17 +10,17 @@ import {
   CounterResetOut
 } from '../domain/usecases/CounterReset'
 
-import { CounterResetRestGateway, CounterRestGateway } from './gateways'
+import { CounterResetRestGateway, CounterIncrementRestGateway } from './gateways'
 
 export class AdapterFactory {
   private readonly counterIncrementIn: CounterIncrementIn
-  private readonly counterIncrementOut: CounterRestGateway
+  private readonly counterIncrementOut: CounterIncrementRestGateway
 
   private readonly counterResetIn: CounterResetIn
   private readonly counterResetOut: CounterResetRestGateway
 
   constructor() {
-    this.counterIncrementOut = new CounterRestGateway(
+    this.counterIncrementOut = new CounterIncrementRestGateway(
       `${process.env.REACT_APP_API_URL}`
     )
     this.counterIncrementIn = new CounterIncrement(this.counterIncrementOut)

@@ -51,9 +51,9 @@ describe('CounterIncrement', () => {
           .spyOn(useCaseFactory.getCounterIncrementOut(), 'updateCounter')
           .mockResolvedValue(new Counter(COUNTER_VALUE + 1))
 
-        expect(await useCaseFactory.getCounterIncrementIn().increment()).toEqual(
-          COUNTER_VALUE + 1
-        )
+        expect(
+          await useCaseFactory.getCounterIncrementIn().increment()
+        ).toEqual(COUNTER_VALUE + 1)
 
         getCounterSpy.mockRestore()
         updateCounterSpy.mockRestore()

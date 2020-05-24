@@ -1,4 +1,4 @@
-import { CounterRestGateway } from '../CounterRestGateway'
+import { CounterIncrementRestGateway } from '../CounterIncrementRestGateway'
 import { Counter } from '../../../domain/entities'
 
 describe('CounterIncrementOutRestGateway', () => {
@@ -15,7 +15,7 @@ describe('CounterIncrementOutRestGateway', () => {
     it('Should perform the /counter request, and only once', async () => {
       fetchMock.mockResponses([JSON.stringify([{}]), {}])
 
-      const counterGateway = new CounterRestGateway(ENDPOINT_URL)
+      const counterGateway = new CounterIncrementRestGateway(ENDPOINT_URL)
       await counterGateway.getCounter()
 
       expect(fetchMock).toHaveBeenCalledTimes(1)
@@ -27,7 +27,7 @@ describe('CounterIncrementOutRestGateway', () => {
         JSON.stringify([{ counter: COUNTER_VALUE, id: COUNTER_ID }])
       )
 
-      const counterGateway = new CounterRestGateway(ENDPOINT_URL)
+      const counterGateway = new CounterIncrementRestGateway(ENDPOINT_URL)
       expect((await counterGateway.getCounter()).counter).toBe(COUNTER_VALUE)
     })
     it('Should throw an error when status not Ok', async () => {
@@ -36,7 +36,7 @@ describe('CounterIncrementOutRestGateway', () => {
         { status: 400 }
       )
 
-      const counterGateway = new CounterRestGateway(ENDPOINT_URL)
+      const counterGateway = new CounterIncrementRestGateway(ENDPOINT_URL)
       await expect(counterGateway.getCounter()).rejects.toThrowError()
     })
   })
@@ -45,7 +45,7 @@ describe('CounterIncrementOutRestGateway', () => {
     it('Should perform the /counter/id request, and only once', async () => {
       fetchMock.mockResponses([JSON.stringify([{}]), {}])
 
-      const counterGateway = new CounterRestGateway(ENDPOINT_URL)
+      const counterGateway = new CounterIncrementRestGateway(ENDPOINT_URL)
       await counterGateway.updateCounter(new Counter(COUNTER_VALUE))
 
       expect(fetchMock).toHaveBeenCalledTimes(1)
@@ -58,7 +58,7 @@ describe('CounterIncrementOutRestGateway', () => {
         JSON.stringify({ counter: COUNTER_VALUE, id: COUNTER_ID })
       )
 
-      const counterGateway = new CounterRestGateway(ENDPOINT_URL)
+      const counterGateway = new CounterIncrementRestGateway(ENDPOINT_URL)
       const counter = (await counterGateway.updateCounter(
         new Counter(COUNTER_VALUE)
       )).counter
@@ -71,7 +71,7 @@ describe('CounterIncrementOutRestGateway', () => {
         { status: 400 }
       )
 
-      const counterGateway = new CounterRestGateway(ENDPOINT_URL)
+      const counterGateway = new CounterIncrementRestGateway(ENDPOINT_URL)
       await expect(
         counterGateway.updateCounter(new Counter(COUNTER_VALUE))
       ).rejects.toThrowError()
