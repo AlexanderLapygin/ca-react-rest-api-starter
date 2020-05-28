@@ -1,5 +1,5 @@
 import React, { createContext } from 'react'
-import useCounterPresenter from './adapters/presenters/useCounterPresenter'
+import usePresenter from './adapters/presenters/usePresenter'
 import App from './ui/App'
 import { AdapterFactory } from './adapters'
 
@@ -12,7 +12,7 @@ export const AppContext = createContext({} as ContextProps)
 const adapterFactory = new AdapterFactory()
 
 export const AppFactory = (): JSX.Element => {
-  const counterPresenter = useCounterPresenter(adapterFactory.getCounterIncrementIn())
+  const counterPresenter = usePresenter(adapterFactory.getCounterIncrementIn())
   return (
     <AppContext.Provider value={{ counterPresenter }}>
       <App />

@@ -1,8 +1,8 @@
 import { renderHook, act } from '@testing-library/react-hooks'
+import { usePresenter } from '../usePresenter'
 import { CounterIncrementIn } from '../../../domain/usecases'
-import { useIncrementPresenter } from '../useIncrementPresenter'
 
-describe('useIncrementPresenter', () => {
+describe('usePresenter', () => {
   const COUNTER_VALUE = 99
 
   class CounterIncrementInMock implements CounterIncrementIn {
@@ -22,17 +22,19 @@ describe('useIncrementPresenter', () => {
     let _result: any = {}
     await act(async () => {
       const { result } = await renderHook(() =>
-        useIncrementPresenter(new CounterIncrementInMock())
+        usePresenter(new CounterIncrementInMock())
       )
       _result = result
     })
     expect(_result.current.state.counter).toBe(COUNTER_VALUE)
-    expect(typeof _result.current.functions.increment).toBe('function')
+    expect(typeof _result.current.functions.increment).toBe(
+      'function'
+    )
   })
 
   it('should increment...', async () => {
     const { result } = renderHook(() =>
-      useIncrementPresenter(new CounterIncrementInMock())
+      usePresenter(new CounterIncrementInMock())
     )
 
     let _result: any = {}
@@ -55,7 +57,7 @@ describe('useIncrementPresenter', () => {
     }
 
     const { result } = renderHook(() =>
-      useIncrementPresenter(new CounterIncrementInErrorMock())
+      usePresenter(new CounterIncrementInErrorMock())
     )
 
     const spy = jest.spyOn(global.console, 'error')

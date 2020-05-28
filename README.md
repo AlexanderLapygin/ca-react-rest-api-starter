@@ -40,11 +40,6 @@ In separate browser tabs do:
 [Alexander Lapygin](https://github.com/AlexanderLapygin) <<alexanderlapygin@gmail.com>>
 
 ---
-## Inspired by
-
-[Eduardo Moroni](https://github.com/eduardomoroni)'s [*react-clean-architecture*](https://github.com/eduardomoroni/react-clean-architecture)
-
----
 
 <p align="center">
   <a href="https://github.com/softspider">

@@ -1,2 +1,1 @@
-export * from './CounterIncrementRestGateway'
-export * from './CounterResetRestGateway'
+export * from './CounterRestGateway'
