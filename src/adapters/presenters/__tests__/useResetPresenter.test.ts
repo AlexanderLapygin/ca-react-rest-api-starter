@@ -1,5 +1,5 @@
 import { renderHook, act } from '@testing-library/react-hooks'
-import { CounterIncrementIn, CounterResetIn } from '../../../domain/usecases'
+import { CounterResetIn } from '../../../domain/usecases'
 import useResetPresenter from '../useResetPresenter'
 
 describe('useResetPresenter', () => {
