@@ -25,14 +25,15 @@ export const usePresenter = (counterIncrementIn: CounterIncrementIn) => {
     }
   }, [counterIncrementIn])
 
-  return {
-    state: {
-      counter
-    },
-    api: {
-      increment: handleIncrement
-    }
+  const state = {
+    counter
   }
+
+  const api = {
+    increment: handleIncrement
+  }
+
+  return [state, api]
 }
 
 export default usePresenter

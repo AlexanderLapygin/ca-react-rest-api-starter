@@ -4,11 +4,9 @@ import { AppContext } from '../AppFactory'
 
 const App = (): JSX.Element => {
   const { counterPresenter } = useContext(AppContext)
-  const { state, api } = counterPresenter
+  const [state, api] = counterPresenter
 
-  return (
-    <Counter counter={state.counter} onClick={api.increment} />
-  )
+  return <Counter counter={state.counter} onClick={api.increment} />
 }
 
 export default App
