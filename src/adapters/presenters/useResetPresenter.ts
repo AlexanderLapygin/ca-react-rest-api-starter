@@ -25,14 +25,15 @@ export const useResetPresenter = (counterResetIn: CounterResetIn) => {
     }
   }, [counterResetIn])
 
-  return {
-    state: {
-      counter
-    },
-    functions: {
-      reset: handleReset
-    }
+  const state = {
+    counter
   }
+
+  const api = {
+    reset: handleReset
+  }
+
+  return [state, api]
 }
 
 export default useResetPresenter

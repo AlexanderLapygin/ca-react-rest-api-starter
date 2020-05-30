@@ -21,10 +21,10 @@ describe('useResetPresenter', () => {
 
     let _result: any = {}
     await act(async () => {
-      await result.current.functions.reset()
+      await result.current[1].reset()
       _result = result
     })
-    expect(_result.current.state.counter).toBe(0)
+    expect(_result.current[0].counter).toBe(0)
   })
 
   it('should print error', async () => {
@@ -41,7 +41,7 @@ describe('useResetPresenter', () => {
     const spy = jest.spyOn(global.console, 'error')
 
     await act(async () => {
-      await result.current.functions.reset()
+      await result.current[1].reset()
     })
     expect(spy).toHaveBeenCalledTimes(1)
 
