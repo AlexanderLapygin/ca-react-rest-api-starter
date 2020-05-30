@@ -27,9 +27,7 @@ describe('usePresenter', () => {
       _result = result
     })
     expect(_result.current.state.counter).toBe(COUNTER_VALUE)
-    expect(typeof _result.current.functions.increment).toBe(
-      'function'
-    )
+    expect(typeof _result.current.api.increment).toBe('function')
   })
 
   it('should increment...', async () => {
@@ -39,7 +37,7 @@ describe('usePresenter', () => {
 
     let _result: any = {}
     await act(async () => {
-      await result.current.functions.increment()
+      await result.current.api.increment()
       _result = result
     })
     expect(_result.current.state.counter).toBe(COUNTER_VALUE + 1)
@@ -63,7 +61,7 @@ describe('usePresenter', () => {
     const spy = jest.spyOn(global.console, 'error')
 
     await act(async () => {
-      await result.current.functions.increment()
+      await result.current.api.increment()
     })
     expect(spy).toHaveBeenCalledTimes(1)
 

@@ -29,7 +29,7 @@ export const usePresenter = (counterIncrementIn: CounterIncrementIn) => {
     state: {
       counter
     },
-    functions: {
+    api: {
       increment: handleIncrement
     }
   }
