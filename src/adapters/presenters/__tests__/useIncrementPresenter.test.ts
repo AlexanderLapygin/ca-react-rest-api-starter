@@ -43,7 +43,7 @@ describe('useIncrementPresenter', () => {
     expect(_result.current[0].counter).toBe(COUNTER_VALUE + 1)
   })
 
-  it('should print error', async () => {
+  it('should print error on increment error', async () => {
     class CounterIncrementInErrorMock implements CounterIncrementIn {
       getCounter(): Promise<number> {
         return Promise.resolve(0)
@@ -54,15 +54,37 @@ describe('useIncrementPresenter', () => {
       }
     }
 
+    const spy = jest.spyOn(global.console, 'error')
+
     const { result } = renderHook(() =>
       useIncrementPresenter(new CounterIncrementInErrorMock())
     )
 
-    const spy = jest.spyOn(global.console, 'error')
-
     await act(async () => {
       await result.current[1].increment()
     })
+    expect(spy).toHaveBeenCalledTimes(1)
+
+    spy.mockRestore()
+  })
+
+  it('should print error on getCounter error', async () => {
+    class CounterIncrementInErrorMock implements CounterIncrementIn {
+      getCounter(): Promise<number> {
+        throw new Error()
+      }
+
+      increment(): Promise<number> {
+        return Promise.resolve(0) // any number
+      }
+    }
+
+    const spy = jest.spyOn(global.console, 'error')
+
+    const { result } = renderHook(() =>
+      useIncrementPresenter(new CounterIncrementInErrorMock())
+    )
+
     expect(spy).toHaveBeenCalledTimes(1)
 
     spy.mockRestore()
