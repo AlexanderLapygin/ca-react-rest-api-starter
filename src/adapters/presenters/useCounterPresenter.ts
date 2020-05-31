@@ -36,7 +36,7 @@ export const useCounterPresenter = (
     } catch (error) {
       console.error(error)
     }
-  }, [])
+  }, [counterResetIn])
 
   const state = {
     counter
