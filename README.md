@@ -8,17 +8,21 @@ It is the client part of the [Fullstack counter-app starter on React in TypeScri
 
 ## Feature tags
 - clean-architecture
+- composition
 - counter-app
+- dip
 - jest
 - jest-fetch-mock
 - react
 - react-hooks
 - react-testing-library
 - rest
+- srp
 - starter
 - test-coverage
 - typescript
 - unit-test
+- use-presenter
 
 ---
 
