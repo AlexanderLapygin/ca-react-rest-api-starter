@@ -1,7 +1,11 @@
 import { useState, useCallback, useEffect } from 'react'
 import { CounterIncrementIn } from '../../domain/usecases'
+import { CounterResetIn } from '../../domain/usecases/CounterReset'
 
-export const useCounterPresenter = (counterIncrementIn: CounterIncrementIn) => {
+export const useCounterPresenter = (
+  counterIncrementIn: CounterIncrementIn,
+  counterResetIn: CounterResetIn
+) => {
   const [counter, setCounter] = useState<number>()
 
   useEffect(() => {
@@ -25,12 +29,22 @@ export const useCounterPresenter = (counterIncrementIn: CounterIncrementIn) => {
     }
   }, [counterIncrementIn])
 
+  const handleReset = useCallback(async (): Promise<void> => {
+    try {
+      await counterResetIn.reset()
+      setCounter(0)
+    } catch (error) {
+      console.error(error)
+    }
+  }, [])
+
   const state = {
     counter
   }
 
   const api = {
-    increment: handleIncrement
+    increment: handleIncrement,
+    reset: handleReset
   }
 
   return [state, api]
