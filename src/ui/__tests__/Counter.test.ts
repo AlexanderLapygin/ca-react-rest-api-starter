@@ -9,20 +9,22 @@ describe('Counter()', () => {
     const { getByTestId, rerender } = render(
       Counter({
         counter: OLD_VALUE,
-        onClick: async (): Promise<void> => {
+        onIncrementClick: async (): Promise<void> => {
           rerender(
             Counter({
               counter: NEW_VALUE,
-              onClick: () => {}
+              onIncrementClick: () => {},
+              onResetClick: () => {}
             })
           )
           return Promise.resolve()
-        }
+        },
+        onResetClick: () => {}
       })
     )
 
     expect(getByTestId('value-testid')).toHaveTextContent(OLD_VALUE)
-    fireEvent.click(getByTestId('button-testid'))
+    fireEvent.click(getByTestId('increment-button-testid'))
     expect(getByTestId('value-testid')).toHaveTextContent(NEW_VALUE)
   })
 
@@ -30,7 +32,7 @@ describe('Counter()', () => {
     // eslint-disable-next-line @typescript-eslint/consistent-type-assertions
     const { getByTestId } = render(Counter(<CounterProps>{}))
 
-    const buttonNode = getByTestId('button-testid')
+    const buttonNode = getByTestId('increment-button-testid')
     expect(buttonNode).toHaveTextContent('+')
   })
 })

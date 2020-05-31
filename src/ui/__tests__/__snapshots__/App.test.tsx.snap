@@ -6,9 +6,14 @@ exports[`AppFactory Should match the snapshot 1`] = `
     <div
       data-testid="value-testid"
     >
+      <button
+        data-testid="reset-button-testid"
+      >
+        Reset
+      </button>
        undefined 
       <button
-        data-testid="button-testid"
+        data-testid="increment-button-testid"
       >
         +
       </button>

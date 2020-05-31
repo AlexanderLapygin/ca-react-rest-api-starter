@@ -2,14 +2,24 @@ import React from 'react'
 
 export interface CounterProps {
   counter: number
-  onClick: () => void
+  onIncrementClick: () => void
+  onResetClick: () => void
 }
 
-const Counter = ({ counter, onClick }: CounterProps): JSX.Element => (
+const Counter = ({
+  counter,
+  onIncrementClick,
+  onResetClick
+}: CounterProps): JSX.Element => (
   <div>
     <div data-testid="value-testid">
+      <button data-testid="reset-button-testid" onClick={onResetClick}>
+        Reset
+      </button>
       {` ${counter} `}
-      <button data-testid="button-testid" onClick={onClick}>+</button>
+      <button data-testid="increment-button-testid" onClick={onIncrementClick}>
+        +
+      </button>
     </div>
   </div>
 )
