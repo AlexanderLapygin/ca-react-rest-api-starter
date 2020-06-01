@@ -23,9 +23,73 @@ import packagesDependencies from "./diagrams/packagesDependencies.svg";
 import packagesDependenciesFlowControl from "./diagrams/packagesDependenciesFlowControl.svg";
 import packagesDependenciesFlowControl1 from "./diagrams/packagesDependenciesFlowControl1.svg";
 
+import beach from "./diagrams/beach.jpg";
+import konyuhov1 from "./diagrams/konyuhov1.jpg";
+import konyuhov2 from "./diagrams/konyuhov2.jpg";
+import konyuhov3 from "./diagrams/konyuhov3.jpg";
+import konyuhov4 from "./diagrams/konyuhov4.jpg";
+import konyuhov5 from "./diagrams/konyuhov5.jpg";
+import konyuhov6 from "./diagrams/konyuhov6.jpg";
+import konyuhov61 from "./diagrams/konyuhov61.jpg";
+import konyuhov7 from "./diagrams/konyuhov7.jpg";
+import nakedInMountains from "./diagrams/nakedInMountains.jpg";
+
+
+
 <Head>
   <title>Счётчик на Чистой Архитектуре</title>
 </Head>
+
+---
+
+<Image src={beach} style={{ width: '30vw', height: '80vh'}}/>
+
+---
+
+<Image src={konyuhov1} style={{ width: '30vw', height: '80vh'}}/>
+
+
+---
+
+<Image src={konyuhov2} style={{ width: '70vw', height: '70vh'}}/>
+
+---
+
+<Image src={konyuhov3} style={{ width: '55vw', height: '80vh'}}/>
+
+---
+
+<Image src={konyuhov4} style={{ width: '60vw', height: '80vh'}}/>
+
+---
+
+<Image src={konyuhov5} style={{ width: '70vw', height: '80vh'}}/>
+
+---
+
+<Image src={konyuhov61} style={{ width: '30vw', height: '80vh'}}/>
+
+---
+
+<Image src={konyuhov7} style={{ width: '30vw', height: '80vh'}}/>
+
+---
+
+<CodeSurferColumns themes={[naiveTheme, naiveTheme]}>
+
+<Step>
+
+<Image src={konyuhov1} style={{ width: '30vw', height: '80vh'}}/>
+
+<Image src={konyuhov61} style={{ width: '30vw', height: '80vh'}}/>
+
+</Step>
+
+</CodeSurferColumns>
+
+---
+
+<Image src={nakedInMountains} style={{ width: '60vw', height: '80vh'}}/>
 
 ---
 
@@ -48,13 +112,37 @@ import packagesDependenciesFlowControl1 from "./diagrams/packagesDependenciesFlo
 - *react-testing-library*
 - *REST API*
 
+<Notes>
+Из свойств *Чистой Архитектуры* пока, наверное, только *Правило зависимостей*, реализуемое с использованием *Принципа
+Инверсии Зависимостей*, но это в ней главное.
+</Notes>
+
 ---
 
 <Image src={template} style={{ width: '102vw', height: '100vh'}}/>
 
+<Notes>
+Это шаблон слайда с заголовком и подписью
+</Notes>
+
 ---
 
 <Image src={packages} style={{ width: '102vw', height: '100vh'}}/>
+
+<Notes>
+
+Структура директорий (packages)
+
+Верхний уровень:
+- domain
+- ui
+- adapters
+- api
+
+*api*
+
+</Notes>
+
 
 ---
 
