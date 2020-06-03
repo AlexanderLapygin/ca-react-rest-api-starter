@@ -9,13 +9,10 @@ interface ContextProps {
 
 export const AppContext = createContext({} as ContextProps)
 
-const adapterFactory = new AdapterFactory()
+export const adapterFactory = new AdapterFactory()
 
 export const AppFactory = (): JSX.Element => {
-  const counterPresenter = useCounterPresenter(
-    adapterFactory.getCounterIncrementIn(),
-    adapterFactory.getCounterResetIn()
-  )
+  const counterPresenter = useCounterPresenter()
   return (
     <AppContext.Provider value={{ counterPresenter }}>
       <App />
