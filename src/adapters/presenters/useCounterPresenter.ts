@@ -2,9 +2,10 @@ import { adapterFactory } from '../../AppFactory'
 import useIncrementPresenter from './useIncrementPresenter'
 import useResetPresenter from './useResetPresenter'
 
-export const useCounterPresenter = () => {
+export const useCounterPresenter = (initialValue = 0) => {
   const [state, incrementAPI] = useIncrementPresenter(
-    adapterFactory.getCounterIncrementIn()
+    adapterFactory.getCounterIncrementIn(),
+    initialValue
   )
 
   const resetAPI = useResetPresenter(

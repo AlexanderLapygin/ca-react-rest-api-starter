@@ -7,9 +7,10 @@ export interface IncrementPresenterAPI {
 }
 
 export const useIncrementPresenter = (
-  counterIncrementIn: CounterIncrementIn
+  counterIncrementIn: CounterIncrementIn,
+  initialValue = 0
 ): [{ counter: number | undefined }, IncrementPresenterAPI] => {
-  const [counter, setCounter] = useState<number>()
+  const [counter, setCounter] = useState<number>(initialValue)
 
   useEffect(() => {
     ;(async (): Promise<void> => {
