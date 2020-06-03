@@ -1,6 +1,5 @@
 import { renderHook, act } from '@testing-library/react-hooks'
 import { useCounterPresenter } from '../useCounterPresenter'
-import { CounterIncrementIn, CounterResetIn } from '../../../domain/usecases'
 
 describe('useCounterPresenter', () => {
   const COUNTER_VALUE = 99
