@@ -1,4 +1,4 @@
-import { useState, useCallback, useEffect } from 'react'
+import { useState, useEffect } from 'react'
 import { CounterIncrementIn } from '../../domain/usecases'
 
 export const usePresenter = (counterIncrementIn: CounterIncrementIn) => {
@@ -16,14 +16,14 @@ export const usePresenter = (counterIncrementIn: CounterIncrementIn) => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
-  const handleIncrement = useCallback(async (): Promise<void> => {
+  const handleIncrement = async (): Promise<void> => {
     try {
       const newCounter: number = await counterIncrementIn.increment()
       setCounter(newCounter)
     } catch (error) {
       console.error(error)
     }
-  }, [counterIncrementIn])
+  }
 
   const state = {
     counter
