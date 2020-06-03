@@ -32,7 +32,8 @@ export const useIncrementPresenter = (
   }
 
   const api = {
-    increment: handleIncrement
+    increment: handleIncrement,
+    update: setCounter
   }
 
   return [state, api]

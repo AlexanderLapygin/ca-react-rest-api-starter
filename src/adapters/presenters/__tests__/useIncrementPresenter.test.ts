@@ -18,7 +18,18 @@ describe('useIncrementPresenter', () => {
     }
   }
 
-  it('should have state.counter and increment function', async () => {
+  it('should return right counter value in the first element', async () => {
+    let _result: any = {}
+    await act(async () => {
+      const { result } = await renderHook(() =>
+        useIncrementPresenter(new CounterIncrementInMock())
+      )
+      _result = result
+    })
+    expect(_result.current[0].counter).toBe(COUNTER_VALUE)
+  })
+
+  it('should return functions in the second and third element', async () => {
     let _result: any = {}
     await act(async () => {
       const { result } = await renderHook(() =>
@@ -28,6 +39,7 @@ describe('useIncrementPresenter', () => {
     })
     expect(_result.current[0].counter).toBe(COUNTER_VALUE)
     expect(typeof _result.current[1].increment).toBe('function')
+    expect(typeof _result.current[2]).toBe('function')
   })
 
   it('should increment...', async () => {

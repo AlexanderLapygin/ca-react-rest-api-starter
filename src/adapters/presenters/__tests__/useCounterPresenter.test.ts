@@ -5,10 +5,12 @@ import { CounterIncrementIn, CounterResetIn } from '../../../domain/usecases'
 describe('useCounterPresenter', () => {
   const COUNTER_VALUE = 99
 
-  it('should have state.counter and increment function', async () => {
+  it('should return state.counter and increment function', async () => {
     let _result: any = {}
     await act(async () => {
-      const { result } = await renderHook(() => useCounterPresenter())
+      const { result } = await renderHook(() =>
+        useCounterPresenter(COUNTER_VALUE)
+      )
       _result = result
     })
     expect(_result.current[0].counter).toBe(COUNTER_VALUE)
