@@ -1,9 +1,14 @@
 import { useState, useEffect } from 'react'
 import { CounterIncrementIn } from '../../domain/usecases'
 
+export interface IncrementPresenterAPI {
+  increment(): Promise<void>
+  updateUI(counter: number): void
+}
+
 export const useIncrementPresenter = (
   counterIncrementIn: CounterIncrementIn
-) => {
+): [{ counter: number | undefined }, IncrementPresenterAPI] => {
   const [counter, setCounter] = useState<number>()
 
   useEffect(() => {
@@ -15,7 +20,7 @@ export const useIncrementPresenter = (
         console.error(error)
       }
     })()
-  }, [])
+  }, [counterIncrementIn])
 
   const handleIncrement = async (): Promise<void> => {
     try {
@@ -30,9 +35,9 @@ export const useIncrementPresenter = (
     counter
   }
 
-  const api = {
+  const api: IncrementPresenterAPI = {
     increment: handleIncrement,
-    update: setCounter
+    updateUI: setCounter
   }
 
   return [state, api]

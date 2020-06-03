@@ -2,12 +2,12 @@ import { CounterResetIn } from '../../domain/usecases/CounterReset'
 
 export const useResetPresenter = (
   counterResetIn: CounterResetIn,
-  incrementAPI: any
+  updateUI: any
 ) => {
   const handleReset = async (): Promise<void> => {
     try {
       await counterResetIn.reset()
-      incrementAPI.update(0)
+      updateUI(0)
     } catch (error) {
       console.error(error)
     }
