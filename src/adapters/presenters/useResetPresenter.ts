@@ -1,6 +1,15 @@
 import { CounterResetIn } from '../../domain/usecases/CounterReset'
 import { useCallback } from 'react'
 
+export interface ResetPresenterAPI {
+  reset(): Promise<void>
+}
+
+export type useResetPresenterType = (
+  counterResetIn: CounterResetIn,
+  updateUI: any
+) => ResetPresenterAPI
+
 export const useResetPresenter = (
   counterResetIn: CounterResetIn,
   updateUI: any
@@ -14,7 +23,7 @@ export const useResetPresenter = (
     }
   }, [counterResetIn, updateUI])
 
-  const api = {
+  const api: ResetPresenterAPI = {
     reset: handleReset
   }
 

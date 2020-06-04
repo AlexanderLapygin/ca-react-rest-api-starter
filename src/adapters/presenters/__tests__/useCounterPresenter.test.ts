@@ -1,47 +1,24 @@
 import { renderHook, act } from '@testing-library/react-hooks'
 import { useCounterPresenter } from '../useCounterPresenter'
+import { CounterIncrementIn } from '../../../domain/usecases'
 
 describe('useCounterPresenter', () => {
   const COUNTER_VALUE = 99
 
-  it('should return state.counter and increment function', () => {
-    let _result: any = {}
-    act(() => {
-      const { result } = renderHook(() => useCounterPresenter(COUNTER_VALUE))
-      _result = result
-    })
-    expect(_result.current[0].counter).toBe(COUNTER_VALUE)
-    expect(typeof _result.current[1].increment).toBe('function')
-  })
+  class CounterIncrementInMock implements CounterIncrementIn {
+    private _count = COUNTER_VALUE
 
-  it('should have reset function', async () => {
-    let _result: any = {}
-    await act(async () => {
-      const { result } = await renderHook(() => useCounterPresenter())
-      _result = result
-    })
-    expect(typeof _result.current[1].reset).toBe('function')
-  })
+    getCounter(): Promise<number> {
+      return Promise.resolve(this._count)
+    }
 
-  it('should increment...', async () => {
-    const { result } = renderHook(() => useCounterPresenter(COUNTER_VALUE))
+    increment(): Promise<number> {
+      this._count++
+      return Promise.resolve(this._count)
+    }
+  }
 
-    let _result: any = {}
-    await act(async () => {
-      await result.current[1].increment()
-      _result = result
-    })
-    expect(_result.current[0].counter).toBe(COUNTER_VALUE + 1)
-  })
+  const useIncrementPresenterMock =
 
-  it('should reset...', async () => {
-    const { result } = renderHook(() => useCounterPresenter())
-
-    let _result: any = {}
-    await act(async () => {
-      await result.current[1].reset()
-      _result = result
-    })
-    expect(_result.current[0].counter).toBe(0)
-  })
+  it('', () => undefined)
 })

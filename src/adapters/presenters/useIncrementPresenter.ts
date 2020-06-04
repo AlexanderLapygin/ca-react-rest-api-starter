@@ -6,6 +6,11 @@ export interface IncrementPresenterAPI {
   updateUI(counter: number): void
 }
 
+export type useIncrementPresenterType = (
+  counterIncrementIn: CounterIncrementIn,
+  initialValue: number
+) => [{ counter: number | undefined }, IncrementPresenterAPI]
+
 export const useIncrementPresenter = (
   counterIncrementIn: CounterIncrementIn,
   initialValue = 0
