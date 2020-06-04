@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useCallback } from 'react'
 import { CounterIncrementIn } from '../../domain/usecases'
 
 export interface IncrementPresenterAPI {
@@ -23,14 +23,14 @@ export const useIncrementPresenter = (
     })()
   }, [counterIncrementIn])
 
-  const handleIncrement = async (): Promise<void> => {
+  const handleIncrement = useCallback(async (): Promise<void> => {
     try {
       const newCounter: number = await counterIncrementIn.increment()
       setCounter(newCounter)
     } catch (error) {
       console.error(error)
     }
-  }
+  }, [counterIncrementIn])
 
   const state = {
     counter
