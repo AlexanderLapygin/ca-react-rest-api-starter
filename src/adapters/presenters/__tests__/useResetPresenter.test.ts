@@ -16,7 +16,7 @@ describe('useResetPresenter', () => {
 
   it('should reset', async () => {
     const { result } = renderHook(() =>
-      useResetPresenter(new CounterResetInMock())
+      useResetPresenter(new CounterResetInMock(), null)
     )
 
     let _result: any = {}

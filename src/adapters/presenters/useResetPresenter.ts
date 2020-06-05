@@ -5,11 +5,6 @@ export interface ResetPresenterAPI {
   reset(): Promise<void>
 }
 
-export type useResetPresenterType = (
-  counterResetIn: CounterResetIn,
-  updateUI: any
-) => ResetPresenterAPI
-
 export const useResetPresenter = (
   counterResetIn: CounterResetIn,
   updateUI: any

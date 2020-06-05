@@ -1,11 +1,10 @@
 import { adapterFactory } from '../../AppFactory'
-import { useIncrementPresenterType } from './useIncrementPresenter'
-import { ResetPresenterAPI, useResetPresenterType } from './useResetPresenter'
+import { ResetPresenterAPI } from './useResetPresenter'
 
 const useCounterPresenter = (
   initialValue = 0,
-  useIncrementPresenter: useIncrementPresenterType,
-  useResetPresenter: useResetPresenterType
+  useIncrementPresenter: any,
+  useResetPresenter: any
 ) => {
   const [state, incrementAPI] = useIncrementPresenter(
     adapterFactory.getCounterIncrementIn(),
@@ -14,12 +13,10 @@ const useCounterPresenter = (
 
   const resetAPI: ResetPresenterAPI = useResetPresenter(
     adapterFactory.getCounterResetIn(),
-    // eslint-disable-next-line @typescript-eslint/unbound-method
     incrementAPI.updateUI
   )
 
   const api = {
-    // eslint-disable-next-line @typescript-eslint/unbound-method
     increment: incrementAPI.increment,
     // eslint-disable-next-line @typescript-eslint/unbound-method
     reset: resetAPI.reset
