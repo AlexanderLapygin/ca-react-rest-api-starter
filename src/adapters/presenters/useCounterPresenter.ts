@@ -2,7 +2,7 @@ import { adapterFactory } from '../../AppFactory'
 import { useIncrementPresenterType } from './useIncrementPresenter'
 import { ResetPresenterAPI, useResetPresenterType } from './useResetPresenter'
 
-export const useCounterPresenter = (
+const useCounterPresenter = (
   initialValue = 0,
   useIncrementPresenter: useIncrementPresenterType,
   useResetPresenter: useResetPresenterType
