@@ -39,7 +39,7 @@ describe('useIncrementPresenter', () => {
     })
     expect(_result.current[0].counter).toBe(COUNTER_VALUE)
     expect(typeof _result.current[1].increment).toBe('function')
-    expect(typeof _result.current[2]).toBe('function')
+    expect(typeof _result.current[1].updateUI).toBe('function')
   })
 
   it('should increment...', async () => {
