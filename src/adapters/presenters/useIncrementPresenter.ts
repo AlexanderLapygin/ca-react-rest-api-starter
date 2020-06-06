@@ -7,11 +7,10 @@ export interface IncrementPresenterAPI {
 }
 
 export const useIncrementPresenter = (
-  counterIncrementIn: CounterIncrementIn,
-  initialValue = 0
+  counterIncrementIn: CounterIncrementIn
 ) => {
   console.log(`useIncrementPresenter BEGIN`)
-  const [counter, setCounter] = useState<number>(initialValue)
+  const [counter, setCounter] = useState<number>()
   console.log(`useIncrementPresenter 1: counter = ${counter}`)
 
   useEffect(() => {
@@ -36,7 +35,7 @@ export const useIncrementPresenter = (
       console.log(`useIncrementPresenter.useEffect getCounter block END`)
     })()
     console.log(`useIncrementPresenter.useEffect END`)
-  }, [])
+  }, [counterIncrementIn])
 
   const handleIncrement = useCallback(async (): Promise<void> => {
     console.log(`useIncrementPresenter.handleIncrement BEGIN`)
@@ -48,9 +47,13 @@ export const useIncrementPresenter = (
       console.log(
         `useIncrementPresenter.handleIncrement AFTER const newCounter: number = await counterIncrementIn.increment(): newCounter = ${newCounter}`
       )
-      console.log(`useIncrementPresenter.handleIncrement BEFORE setCounter(newCounter)`)
+      console.log(
+        `useIncrementPresenter.handleIncrement BEFORE setCounter(newCounter)`
+      )
       setCounter(newCounter)
-      console.log(`useIncrementPresenter.handleIncrement AFTER setCounter(newCounter)`)
+      console.log(
+        `useIncrementPresenter.handleIncrement AFTER setCounter(newCounter)`
+      )
     } catch (error) {
       console.error(error)
     }
