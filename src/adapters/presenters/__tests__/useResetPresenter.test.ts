@@ -1,6 +1,7 @@
 import { renderHook, act } from '@testing-library/react-hooks'
 import { CounterResetIn } from '../../../domain/usecases'
 import useResetPresenter from '../useResetPresenter'
+import {useIncrementPresenter} from "../useIncrementPresenter";
 
 describe('useResetPresenter', () => {
   const COUNTER_VALUE = 99
@@ -14,20 +15,15 @@ describe('useResetPresenter', () => {
     }
   }
 
-  it('should reset', async () => {
+  it('should return reset function', () => {
     const { result } = renderHook(() =>
       useResetPresenter(new CounterResetInMock(), null)
     )
 
-    let _result: any = {}
-    await act(async () => {
-      await result.current[1].reset()
-      _result = result
-    })
-    expect(_result.current[0].counter).toBe(0)
+    expect(typeof result.current.reset).toBe('function')
   })
 
-  it('should print error', async () => {
+  it('should print error', () => {
     class CounterResetInErrorMock implements CounterResetIn {
       reset(): Promise<void> {
         throw new Error()
@@ -35,13 +31,13 @@ describe('useResetPresenter', () => {
     }
 
     const { result } = renderHook(() =>
-      useResetPresenter(new CounterResetInErrorMock())
+      useResetPresenter(new CounterResetInErrorMock(), null)
     )
 
     const spy = jest.spyOn(global.console, 'error')
 
-    await act(async () => {
-      await result.current[1].reset()
+    act(async () => {
+      await result.current.reset()
     })
     expect(spy).toHaveBeenCalledTimes(1)
 

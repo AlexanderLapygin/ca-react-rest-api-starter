@@ -18,7 +18,7 @@ describe('useCounterPresenter', () => {
     }
   }
 
-  const useIncrementPresenterMock =
+  //const useIncrementPresenterMock =
 
   it('', () => undefined)
 })
