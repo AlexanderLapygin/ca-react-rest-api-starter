@@ -19,17 +19,13 @@ describe('useIncrementPresenter', () => {
   }
 
   it('should return right counter value in the first element', async () => {
-    let _result = {}
-    await act(async () => {
-      const { result } = await renderHook(() =>
-        useIncrementPresenter(new CounterIncrementInMock())
-      )
-      _result = result
-    })
-    expect(_result.current[0].counter).toBe(COUNTER_VALUE)
+    const { result } = await renderHook(() =>
+      useIncrementPresenter(new CounterIncrementInMock())
+    )
+    expect(result.current[0].counter).toBe(COUNTER_VALUE)
   })
 
-  it('should return functions in the second and third element', async () => {
+  it('should return increment and updateUI functions in the second and third array element', async () => {
     let _result = {}
     await act(async () => {
       const { result } = await renderHook(() =>
@@ -37,22 +33,39 @@ describe('useIncrementPresenter', () => {
       )
       _result = result
     })
+
     expect(_result.current[0].counter).toBe(COUNTER_VALUE)
     expect(typeof _result.current[1].increment).toBe('function')
     expect(typeof _result.current[1].updateUI).toBe('function')
   })
 
   it('should increment...', async () => {
-    const { result } = await renderHook(() =>
-      useIncrementPresenter(new CounterIncrementInMock())
-    )
+    console.log('useIncrementPresenter.test.await act(async () => { BEGIN')
+    const { result } = await renderHook(() => {
+      console.log('useIncrementPresenter.test.await renderHook BEGIN')
+      const result = useIncrementPresenter(new CounterIncrementInMock())
+      console.log('useIncrementPresenter.test.await renderHook END')
+      return result
+    })
 
     let _result = {}
+    console.log('useIncrementPresenter.test BEGIN')
     await act(async () => {
+      console.log(
+        'useIncrementPresenter.test BEFORE await result.current[1].increment()'
+      )
       await result.current[1].increment()
+      console.log(
+        'useIncrementPresenter.test AFTER await result.current[1].increment()'
+      )
       _result = result
+      console.log('useIncrementPresenter.test.await act(async () => {...} END')
     })
+    console.log(
+      'useIncrementPresenter.test BEFORE expect(_result.current[0].counter).toBe(COUNTER_VALUE + 1)'
+    )
     expect(_result.current[0].counter).toBe(COUNTER_VALUE + 1)
+    console.log('useIncrementPresenter.test END')
   })
 
   it('should print error on increment error', async () => {
