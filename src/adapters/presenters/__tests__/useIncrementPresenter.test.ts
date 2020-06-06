@@ -19,7 +19,7 @@ describe('useIncrementPresenter', () => {
   }
 
   it('should return right counter value in the first element', async () => {
-    let _result: any = {}
+    let _result = {}
     await act(async () => {
       const { result } = await renderHook(() =>
         useIncrementPresenter(new CounterIncrementInMock())
@@ -30,7 +30,7 @@ describe('useIncrementPresenter', () => {
   })
 
   it('should return functions in the second and third element', async () => {
-    let _result: any = {}
+    let _result = {}
     await act(async () => {
       const { result } = await renderHook(() =>
         useIncrementPresenter(new CounterIncrementInMock())
@@ -43,11 +43,11 @@ describe('useIncrementPresenter', () => {
   })
 
   it('should increment...', async () => {
-    const { result } = renderHook(() =>
+    const { result } = await renderHook(() =>
       useIncrementPresenter(new CounterIncrementInMock())
     )
 
-    let _result: any = {}
+    let _result = {}
     await act(async () => {
       await result.current[1].increment()
       _result = result
