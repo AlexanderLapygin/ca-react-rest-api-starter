@@ -26,17 +26,13 @@ describe('useIncrementPresenter', () => {
   })
 
   it('should return increment and updateUI functions in the second and third array element', async () => {
-    let _result = {}
-    await act(async () => {
-      const { result } = await renderHook(() =>
-        useIncrementPresenter(new CounterIncrementInMock())
-      )
-      _result = result
-    })
+    const { result } = await renderHook(() =>
+      useIncrementPresenter(new CounterIncrementInMock())
+    )
 
-    expect(_result.current[0].counter).toBe(COUNTER_VALUE)
-    expect(typeof _result.current[1].increment).toBe('function')
-    expect(typeof _result.current[1].updateUI).toBe('function')
+    expect(result.current[0].counter).toBe(COUNTER_VALUE)
+    expect(typeof result.current[1].increment).toBe('function')
+    expect(typeof result.current[1].updateUI).toBe('function')
   })
 
   it('should increment...', async () => {
