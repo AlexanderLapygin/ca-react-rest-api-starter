@@ -36,17 +36,17 @@ describe('useIncrementPresenter', () => {
   })
 
   it('should increment...', async () => {
-    console.log('useIncrementPresenter.test.await act(async () => { BEGIN')
+    console.log('useIncrementPresenter.test BEGIN')
     const { result } = await renderHook(() => {
-      console.log('useIncrementPresenter.test.await renderHook BEGIN')
+      console.log('useIncrementPresenter.test:renderHook BEGIN')
       const result = useIncrementPresenter(new CounterIncrementInMock())
-      console.log('useIncrementPresenter.test.await renderHook END')
+      console.log('useIncrementPresenter.test: renderHook END')
       return result
     })
 
     let _result = {}
-    console.log('useIncrementPresenter.test BEGIN')
     await act(async () => {
+      console.log('useIncrementPresenter.test.await act(async () => { BEGIN')
       console.log(
         'useIncrementPresenter.test BEFORE await result.current[1].increment()'
       )
