@@ -35,7 +35,7 @@ export const useIncrementPresenter = (
       console.log(`useIncrementPresenter.useEffect getCounter block END`)
     })()
     console.log(`useIncrementPresenter.useEffect END`)
-  }, [counterIncrementIn])
+  }, [])
 
   const handleIncrement = useCallback(async (): Promise<void> => {
     console.log(`useIncrementPresenter.handleIncrement BEGIN`)
