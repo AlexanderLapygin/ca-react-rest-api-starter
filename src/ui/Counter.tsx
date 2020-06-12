@@ -1,19 +1,12 @@
 import React from 'react'
-
-// eslint-disable-next-line @typescript-eslint/ban-ts-ignore
-// @ts-ignore
 import { adapterFactory } from './App'
-import useIncrementPresenter from '../adapters/presenters/useIncrementPresenter'
 import useResetPresenter from '../adapters/presenters/useResetPresenter'
+import useIncrementPresenter from '../adapters/presenters/useIncrementPresenter'
 
 const Counter = (): JSX.Element => {
   const [state, { increment, updateUI }] = useIncrementPresenter(
     adapterFactory.getCounterIncrementIn()
   )
-  // const { reset } = useResetPresenter(
-  //   adapterFactory.getCounterResetIn(),
-  //   updateUI
-  // )
   const { reset } = useResetPresenter(
     adapterFactory.getCounterResetIn(),
     updateUI
