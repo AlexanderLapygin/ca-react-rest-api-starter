@@ -41,8 +41,9 @@ import layerModule1 from "./diagrams/layerModule1.svg";
 
 import caLayerModulesBase from "./diagrams/caLayerModulesBase.svg";
 import caLayerModulesBaseRequired from "./diagrams/caLayerModulesBaseRequired.svg";
-
 import caLayerModulesBase1 from "./diagrams/caLayerModulesBase1.svg";
+
+import counterResetModule from "./diagrams/counterResetModule.svg";
 
 import template from "./diagrams/template.svg";
 
@@ -225,6 +226,29 @@ import template from "./diagrams/template.svg";
 
 ... 
 
+</Notes>
+
+---
+
+<CodeSurferColumns themes={[naiveTheme, smartTheme]}>
+
+<Step>
+
+<Image src={counterResetModule} style={{ width: '100vw', height: '100vh'}}/>
+
+```ts file=../../src/domain/usecases/CounterReset.ts title="CounterReset"
+```
+
+</Step>
+
+</CodeSurferColumns>
+
+
+<Notes>
+
+В качестве примера приведём код бизнес-логики - из *usecases* - *CounterReset*
+
+... 
 </Notes>
 
 ---
