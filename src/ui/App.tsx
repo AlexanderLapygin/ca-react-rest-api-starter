@@ -1,12 +1,9 @@
-import React, { useContext } from 'react'
+import React from 'react'
 import Counter from './Counter'
-import { AppContext } from '../AppFactory'
+import { AdapterFactory } from '../adapters'
 
-const App = (): JSX.Element => {
-  const { counterPresenter } = useContext(AppContext)
-  const [state, api] = counterPresenter
+export const adapterFactory = new AdapterFactory()
 
-  return <Counter counter={state.counter} onClick={api.increment} />
-}
+const App = (): JSX.Element => <Counter />
 
 export default App
