@@ -9,16 +9,19 @@ It is the client part of the [Fullstack counter-app starter on React in TypeScri
 ## Feature tags
 - clean-architecture
 - counter-app
+- dip
 - jest
 - jest-fetch-mock
 - react
 - react-hooks
 - react-testing-library
 - rest
+- srp
 - starter
 - test-coverage
 - typescript
 - unit-test
+- use-presenter
 
 ---
 
@@ -38,6 +41,11 @@ In separate browser tabs do:
 ## Author
 
 [Alexander Lapygin](https://github.com/AlexanderLapygin) <<alexanderlapygin@gmail.com>>
+
+---
+## Inspired by
+
+[Eduardo Moroni](https://github.com/eduardomoroni)'s [*react-clean-architecture*](https://github.com/eduardomoroni/react-clean-architecture)
 
 ---
 
