@@ -10,12 +10,12 @@ describe('CounterResetOutRestGateway', () => {
     fetchMock.resetMocks()
   })
 
-  describe('resetCounter()', () => {
+  describe('saveReset()', () => {
     it('Should perform the /counter/id request, and only once', async () => {
       fetchMock.mockResponses([JSON.stringify([{}]), {}])
 
       const counterResetGateway = new CounterResetRestGateway(ENDPOINT_URL)
-      await counterResetGateway.resetCounter()
+      await counterResetGateway.saveReset()
 
       expect(fetchMock).toHaveBeenCalledTimes(1)
       expect(fetchMock.mock.calls[0][0]).toEqual(
@@ -29,7 +29,7 @@ describe('CounterResetOutRestGateway', () => {
       )
 
       const counterResetGateway = new CounterResetRestGateway(ENDPOINT_URL)
-      await expect(counterResetGateway.resetCounter()).rejects.toThrowError()
+      await expect(counterResetGateway.saveReset()).rejects.toThrowError()
     })
   })
 })

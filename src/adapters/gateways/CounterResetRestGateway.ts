@@ -4,7 +4,7 @@ import { CounterResetOut } from '../../domain/usecases/CounterReset'
 export class CounterResetRestGateway implements CounterResetOut {
   constructor(private readonly endpoint: string) {}
 
-  async resetCounter(): Promise<void> {
+  async saveReset(): Promise<void> {
     // eslint-disable-next-line no-useless-catch
     try {
       const response = await fetch(this._createUrl(`/counter/1`), {

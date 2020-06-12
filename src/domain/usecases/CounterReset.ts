@@ -3,13 +3,13 @@ export interface CounterResetIn {
 }
 
 export interface CounterResetOut {
-  resetCounter(): Promise<void>
+  saveReset(): Promise<void>
 }
 
 export class CounterReset implements CounterResetIn {
   constructor(private counterResetOut: CounterResetOut) {}
 
   reset(): Promise<void> {
-    return this.counterResetOut.resetCounter()
+    return this.counterResetOut.saveReset()
   }
 }

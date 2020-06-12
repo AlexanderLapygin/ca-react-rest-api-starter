@@ -14,7 +14,7 @@ describe('CounterReset', () => {
       it('should call reset', async () => {
         const resetCounterSpy = jest.spyOn(
           useCaseFactory.getCounterResetOut(),
-          'resetCounter'
+          'saveReset'
         )
 
         await useCaseFactory.getCounterResetIn().reset()

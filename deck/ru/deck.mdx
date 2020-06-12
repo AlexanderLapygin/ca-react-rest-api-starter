@@ -44,6 +44,7 @@ import caLayerModulesBaseRequired from "./diagrams/caLayerModulesBaseRequired.sv
 import caLayerModulesBase1 from "./diagrams/caLayerModulesBase1.svg";
 
 import counterResetModule from "./diagrams/counterResetModule.svg";
+import counterResetModuleImplementation from "./diagrams/counterResetModuleImplementation.svg";
 
 import template from "./diagrams/template.svg";
 
@@ -230,13 +231,23 @@ import template from "./diagrams/template.svg";
 
 ---
 
-<CodeSurferColumns themes={[naiveTheme, smartTheme]}>
+<CodeSurferColumns themes={[naiveTheme, myTheme]}>
 
 <Step>
 
 <Image src={counterResetModule} style={{ width: '100vw', height: '100vh'}}/>
 
-```ts file=../../src/domain/usecases/CounterReset.ts title="CounterReset"
+```ts 1:3,5:7 file=../../src/domain/usecases/CounterReset.ts title="CounterReset"
+```
+
+</Step>
+
+
+<Step>
+
+<Image src={counterResetModuleImplementation} style={{ width: '100vw', height: '100vh'}}/>
+
+```ts 9:15 file=../../src/domain/usecases/CounterReset.ts title="CounterReset"
 ```
 
 </Step>
