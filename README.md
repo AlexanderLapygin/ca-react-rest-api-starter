@@ -1,11 +1,13 @@
 <div>
     <a href="https://github.com/softspiders/softspiders">
-      <img align="center" src="./diagrams/sslogo-from-github-20.png"/>
+      <img src="./diagrams/sslogo-from-github-20.png"/>
     </a>
-    <div>
-        [SOFTSPIDERS](https://github.com/softspiders/softspiders)
+    <div align="right">
+        <a href="https://github.com/softspiders/softspiders"></a>
     </div>
 </div>
+
+[SOFTSPIDERS](https://github.com/softspiders/softspiders)
 
 
 
