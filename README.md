@@ -1,6 +1,7 @@
 <a href="https://github.com/softspiders">
   <img align="center" src="./diagrams/sslogo-from-github-20.png"/>
 </a>
+
 [SOFTSPIDERS](https://github.com/softspiders/softspiders)
 
 
