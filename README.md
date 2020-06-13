@@ -1,10 +1,10 @@
 <div>
-    <div align="right">
+    <div align="center">
         <a href="https://github.com/softspiders/softspiders">
           <img src="./diagrams/sslogo-from-github-20.png"/>
         </a>
     </div>
-    <div align="left">
+    <div align="center">
         <a href="https://github.com/softspiders/softspiders">SOFTSPIDERS</a>
     </div>
 </div>
