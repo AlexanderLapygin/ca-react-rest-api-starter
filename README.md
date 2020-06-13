@@ -83,8 +83,8 @@ npm run test:coverage
 
 Licensed under the [MIT license](./LICENSE).
 
-![](./diagrams/sslogo-from-github-20.png)
-
 <p align="center">
   <img src="./diagrams/sslogo-from-github-20.png"/>
 </p>
+
+<img src="./diagrams/sslogo-from-github-20.png"/>
