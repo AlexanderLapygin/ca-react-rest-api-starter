@@ -86,5 +86,9 @@ Licensed under the [MIT license](./LICENSE).
 ![](./diagrams/sslogo-from-github-20.png)
 
 <p align="center">
+  <a href="https://github.com/softspider">
     <img src="./diagrams/sslogo-from-github.png" width="600"/>
+  </a>
+  </br>
+  <b>Package structure</b>
 </p>
