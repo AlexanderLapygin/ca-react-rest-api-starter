@@ -87,4 +87,4 @@ Licensed under the [MIT license](./LICENSE).
   <img src="./diagrams/sslogo-from-github-20.png"/>
 </p>
 
-<img src="./diagrams/sslogo-from-github-20.png"/>
+<img align="center" src="./diagrams/sslogo-from-github-20.png"/>
