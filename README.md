@@ -4,7 +4,7 @@
     </a>
 </div>
 
-## Counter-app on REST API starter on React in TypeScript that follows Clean Architecture principles
+## Client-app-starter on the Clean Architecture
 
 It is the client part of the [Fullstack counter-app starter on React in TypeScript that follows Clean Architecture principles](https://github.com/softspiders/clean-architecture-counter-starters/tree/clean-architecture-counter-react-hooks-fullstack-jest-ts-starter).
 
@@ -86,8 +86,6 @@ npm run test:coverage
 ## License
 
 Licensed under the [MIT license](./LICENSE).
-
----
 
 <div align="center">
     <a href="https://github.com/softspiders/softspiders">SOFTSPIDERS</a>
