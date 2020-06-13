@@ -1,9 +1,11 @@
 <div>
-    <a href="https://github.com/softspiders/softspiders">
-      <img src="./diagrams/sslogo-from-github-20.png"/>
-    </a>
-    <div align="right">
+    <div align="left">
         <a href="https://github.com/softspiders/softspiders">SOFTSPIDERS</a>
+    </div>
+    <div align="right">
+        <a href="https://github.com/softspiders/softspiders">
+          <img src="./diagrams/sslogo-from-github-20.png"/>
+        </a>
     </div>
 </div>
 
