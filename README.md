@@ -17,6 +17,7 @@ It is the client part of the [Fullstack counter-app starter on React in TypeScri
 - react-testing-library
 - rest
 - srp
+- ss-deck
 - starter
 - test-coverage
 - typescript
@@ -46,7 +47,8 @@ In separate browser tabs do:
 ---
 ## Inspired by
 
-[Eduardo Moroni](https://github.com/eduardomoroni)'s [*react-clean-architecture*](https://github.com/eduardomoroni/react-clean-architecture)
+[Eduardo Moroni](https://github.com/eduardomoroni)'s
+[*react-clean-architecture*](https://github.com/eduardomoroni/react-clean-architecture)
 
 ---
 
