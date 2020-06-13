@@ -58,7 +58,7 @@ import template from "./diagrams/template.svg";
 <p style="font-size: 150px; text-align:center; padding-bottom:140px;">
 Starter for
 <br/>
-Client Applications on
+Client Applications
 </p>
 
 <Notes>
@@ -70,11 +70,12 @@ Client Applications on
 ---
 
 <p style="font-size: 150px; text-align:center; padding-bottom:80px;">
-The Clean Architecture
+On the Clean Architecture
 </p>
 
 <Notes>
 ...
+
 принципах *Чистой Архитектуры*.
 
 Несмотря на то, что предметная область и, соответственно, бизнес-логика стартера предельно минималистичны - это
@@ -87,8 +88,8 @@ The Clean Architecture
 
 От аудитории необходимо хотя бы минимальное предварительное понимание существа проблем, решаемых *Чистой Архитектурой*.
 
-Ну а для тех, кто впервые слышит это словосочетание, сформулируем кратко: принципы *Чистой Архитектуры* направлены на
-обеспечение долгого и устойчивого развития программного продукта.  
+Ну а для тех, кто словосочетание  *Чистая Архитектура* слышит впервые, сформулируем кратко: принципы *Чистой
+Архитектуры* направлены на обеспечение долгого и устойчивого развития программного продукта.  
 
 </Notes>
 
@@ -98,16 +99,23 @@ The Clean Architecture
 Key Features
 </p>
 
+<Notes>
+
+Ключевый свойства стартера:
+
+...
+</Notes>
+
 ---
 
 - *Clean Architecture*
 
 <Notes>
+...
 
-Из принципов *Чистой Архитектуры*, здесь представлены все, кроме *Liskov Substitution Principle*, для которого, как
-минимум, нужно где-то использовать иерархию типов. Минималистичность предлагаемой предметной области не позволяет это
-сделать. 
+*Чистая Архитектура*
 
+...
 </Notes>
 
 ---
@@ -115,11 +123,27 @@ Key Features
 - *Clean Architecture*
 - *React*
 
+<Notes>
+...
+
+*React*
+
+...
+</Notes>
+
 ---
 
 - *Clean Architecture*
 - *React*
 - *TypeScript*
+
+<Notes>
+...
+
+*TypeScript*
+
+...
+</Notes>
 
 ---
 
@@ -127,6 +151,15 @@ Key Features
 - *React*
 - *TypeScript*
 - *React Testing Library*
+
+<Notes>
+...
+
+Для модульного тестирования используется библиотека Кента Доддса *React Testing Library*. Последнее время она получила
+уже вполне широкое признание среди разработчиков.
+
+...
+</Notes>
 
 ---
 
@@ -136,19 +169,37 @@ Key Features
 - *React Testing Library*
 - *REST API*
 
+<Notes>
+...
+
+*Взаимодействие с сервисами по REST API*
+
+Последние два пункта заслуживают отдельного рассмотрения, поэтому здесь подробно освещаться не будут. 
+
+</Notes>
+
 ---
 
 - *Clean Architecture*
-  - *Single Responsibility Principle*
-  - *Open-Closed Principle*
-  - ~~*Liskov Substitution Principle*~~
-  - *Interface Segregation Principle*
-  - *Dependency Inversion Principle*
+  - *Single Responsibility Principle (SRP)*
+  - *Open-Closed Principle (OCP)*
+  - ~~*Liskov Substitution Principle (LSP)*~~
+  - *Interface Segregation Principle (ISP)*
+  - *Dependency Inversion Principle (DIP)*
 
 <Notes>
 
-Из принципов *Чистой Архитектуры*, здесь представлены все, кроме *Liskov Substitution Principle*, для которого, как
-минимум, нужно где-то использовать иерархию типов.
+Из принципов *Чистой Архитектуры* - как известно, это принципы *SOLID*, здесь представлены все, кроме *Liskov
+Substitution Principle*, для которого, как минимум, необходимо использование иерархию типов.
+Но минималистичность предлагаемой предметной области не позволяет это сделать.
+
+Отдельным интересным вопросом является обоснование необходимости и достаточности принципов *SOLID*. Например, существуют
+небезосновательные мнения, к которым склонен присоединиться и автор, что эти принципы не лишены избыточности.
+
+Какие-то из них, такие как *SRP*, *DIP* и *LSP*, являются главными, первичными, в то время как остальные - производными,
+вторичными, возможно, добавленными, так сказать, "для красного словца" - для получения красивой аббревиатуры.
+
+Но здесь не об этом.  
 
 </Notes>
 
