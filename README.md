@@ -1,8 +1,12 @@
-<a href="https://github.com/softspiders">
-  <img align="center" src="./diagrams/sslogo-from-github-20.png"/>
-</a>
+<div>
+    <a href="https://github.com/softspiders/softspiders">
+      <img align="center" src="./diagrams/sslogo-from-github-20.png"/>
+    </a>
+    <div>
+        [SOFTSPIDERS](https://github.com/softspiders/softspiders)
+    </div>
+</div>
 
-[SOFTSPIDERS](https://github.com/softspiders/softspiders)
 
 
 ## Counter-app on REST API starter on React in TypeScript that follows Clean Architecture principles
