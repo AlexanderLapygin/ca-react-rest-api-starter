@@ -12,6 +12,7 @@ It is the client part of the [Fullstack counter-app starter on React in TypeScri
 
 ## Feature tags
 - clean-architecture
+- client
 - counter-app
 - dip
 - jest
