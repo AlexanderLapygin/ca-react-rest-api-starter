@@ -1,12 +1,7 @@
-<div>
-    <div align="center">
-        <a href="https://github.com/softspiders/softspiders">
-          <img src="./diagrams/sslogo-from-github-20.png"/>
-        </a>
-    </div>
-    <div align="center">
-        <a href="https://github.com/softspiders/softspiders">SOFTSPIDERS</a>
-    </div>
+<div align="center">
+    <a href="https://github.com/softspiders/softspiders">
+      <img src="./diagrams/sslogo-from-github-20.png"/>
+    </a>
 </div>
 
 ## Counter-app on REST API starter on React in TypeScript that follows Clean Architecture principles
@@ -91,6 +86,8 @@ npm run test:coverage
 ## License
 
 Licensed under the [MIT license](./LICENSE).
+
+---
 
 <div align="center">
     <a href="https://github.com/softspiders/softspiders">SOFTSPIDERS</a>
