@@ -33,6 +33,7 @@ import legoModules from "./diagrams/legoModules.png";
 import climbersBunch2 from "./diagrams/climbersBunch2.jpg";
 
 import packagesClient0 from "./diagrams/packagesClient0.svg";
+import packagesClient1 from "./diagrams/packagesClient1.svg";
 import packagesClient from "./diagrams/packagesClient.svg";
 import packages from "./diagrams/packages.svg";
 import packagesDependencies from "./diagrams/packagesDependencies.svg";
@@ -379,24 +380,40 @@ Clean Architecture*](https://habr.com/ru/company/mobileup/blog/335382/).
 <Image src={packagesClient0} style={{ width: '102vw', height: '100vh'}}/>
 
 <Notes>
-...
 
-Но к коду будем приближаться всё-таки плавно, поэтапно, без резких переходов.
+Начнём всё-таки с UML-диаграмм. Код совсем близко ;)
 
-Начнём с UML-диаграмм.
-
-Здесь изображена структура директорий (packages) клиентского приложения, вполне обычная при разработке на принципах
-Чистой Архитектуры.
+Здесь изображена структура директорий клиентского приложения, вполне обычная при разработке на принципах *Чистой
+Архитектуры*.
 
 - domain
   - entities
   - usecases
-- ui
 - adapters
   - presenters
   - gateways
+- infrastructure
+  - ui
 
-Самое время дать пояснения используемым названиям.
+Директории верхнего уровня соответствуют одноимённым слоям, за исключением дополнительной директории *Domain*,
+включающей директории-слои *Entities* и *Use Cases*.
+
+Это всего лишь один из возможных вариантов организации структуры. При наличии понимания назначения каждой директории,
+когда её имя говорит само за себя, структуру можно строить по-разному.
+
+</Notes>
+
+---
+
+<Image src={packagesClient1} style={{ width: '102vw', height: '100vh'}}/>
+
+<Notes>
+...
+
+Например, можно сделать её плоской, упразднив корневые директории и разместив оставшиеся на одном уровне:  
+
+Другими словами, в данном случае до тех пор, пока структура не будет определяться какими-то привходящими требованиями,
+например, при использовании кодогенератора, ориентированного на жёсткую структуру, приветствуется творческий подход.
 
 </Notes>
 
@@ -406,16 +423,7 @@ Clean Architecture*](https://habr.com/ru/company/mobileup/blog/335382/).
 
 <Notes>
 
-Здесь изображена структура директорий (packages) клиентского приложения, вполне обычная при разработке на принципах
-Чистой Архитектуры.
-
-- domain
-  - entities
-  - usecases
-- ui
-- adapters
-  - presenters
-  - gateways
+Это клиентская часть приложения, обведём её пунктиром.
 
 </Notes>
 
@@ -425,7 +433,8 @@ Clean Architecture*](https://habr.com/ru/company/mobileup/blog/335382/).
 
 <Notes>
 
-Для полноты картины разместим на диаграмме серверную часть приложения
+Для полноты картины разместим на диаграмме и серверную часть, реализующую REST API для сохранения значения счётчика,
+например, на случай перезагрузки клиентского приложения.
 
 </Notes>
 
