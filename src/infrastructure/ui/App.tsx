@@ -1,6 +1,6 @@
 import React from 'react'
 import Counter from './Counter'
-import { AdapterFactory } from '../adapters'
+import { AdapterFactory } from '../../adapters'
 
 export const adapterFactory = new AdapterFactory()
 
