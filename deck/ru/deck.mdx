@@ -359,29 +359,20 @@ Clean Architecture*](https://habr.com/ru/company/mobileup/blog/335382/).
 ---
 
 <p style="font-size: 130px; text-align:center; padding-bottom:140px;">
-<i>Правило Зависимостей</i>
+Как это всё
 <br/>
-и модули
-</p>
-
----
-
-<CodeSurferColumns themes={[naiveTheme, naiveTheme]}>
-
-<Step>
-
-<Image src={modulesCosmicStation} style={{ width: '100vw', height: '70vh'}}/>
-
-<Image src={legoModules} style={{ width: '50vw', height: '70vh'}}/>
-
-</Step>
-
-</CodeSurferColumns>
+выглядит в коде ?
+ </p>
 
 <Notes>
 
-Что общего в этих изображениях ?
+Дальнейшее изложение посвящено разбору стартера, в котором принципы *Чистой Архитектуры* реализуются в программном коде.
 
+Как уже говорилось, стартер реализован на *TypeScript*.
+При этом важно отметить, что большая часть решений будет применима и в других языках, особенно в языках, поддерживающих
+статическую типизацию, таких как *Java*, *Kotlin*, *C#*.   
+
+...
 </Notes>
 
 ---
@@ -389,6 +380,11 @@ Clean Architecture*](https://habr.com/ru/company/mobileup/blog/335382/).
 <Image src={packagesClient0} style={{ width: '102vw', height: '100vh'}}/>
 
 <Notes>
+...
+
+Но к коду будем приближаться всё-таки плавно, поэтапно, без резких переходов.
+
+Начнём с UML-диаграмм.
 
 Здесь изображена структура директорий (packages) клиентского приложения, вполне обычная при разработке на принципах
 Чистой Архитектуры.
@@ -665,5 +661,41 @@ Clean Architecture*](https://habr.com/ru/company/mobileup/blog/335382/).
 Что мы оптимизируем ?
 
 Масштабирование во времени - устойчивость развития.
+
+</Notes>
+
+---
+
+<p style="font-size: 130px; text-align:center; padding-bottom:140px;">
+<i>Правило Зависимостей</i>
+<br/>
+и модули
+</p>
+
+<Notes>
+...
+
+ *Правило Зависимостей*
+
+...
+</Notes>
+
+---
+
+<CodeSurferColumns themes={[naiveTheme, naiveTheme]}>
+
+<Step>
+
+<Image src={modulesCosmicStation} style={{ width: '100vw', height: '70vh'}}/>
+
+<Image src={legoModules} style={{ width: '50vw', height: '70vh'}}/>
+
+</Step>
+
+</CodeSurferColumns>
+
+<Notes>
+
+Что общего в этих изображениях ?
 
 </Notes>
