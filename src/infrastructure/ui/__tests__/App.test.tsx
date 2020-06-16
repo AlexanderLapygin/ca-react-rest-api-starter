@@ -1,11 +1,11 @@
 import React from 'react'
 import { render, cleanup } from '@testing-library/react'
 import App from '../App'
-import useIncrementPresenter from '../../adapters/presenters/useIncrementPresenter'
-import useResetPresenter from '../../adapters/presenters/useResetPresenter'
+import useIncrementPresenter from '../../../adapters/presenters/useIncrementPresenter'
+import useResetPresenter from '../../../adapters/presenters/useResetPresenter'
 
-jest.mock('../../adapters/presenters/useIncrementPresenter')
-jest.mock('../../adapters/presenters/useResetPresenter')
+jest.mock('../../../adapters/presenters/useIncrementPresenter')
+jest.mock('../../../adapters/presenters/useResetPresenter')
 
 describe('App', () => {
   // Mocking Counter hooks to prevent remote fetching

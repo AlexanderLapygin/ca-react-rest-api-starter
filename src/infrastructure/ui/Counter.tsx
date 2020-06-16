@@ -1,7 +1,7 @@
 import React from 'react'
 import { adapterFactory } from './App'
-import useResetPresenter from '../adapters/presenters/useResetPresenter'
-import useIncrementPresenter from '../adapters/presenters/useIncrementPresenter'
+import useResetPresenter from '../../adapters/presenters/useResetPresenter'
+import useIncrementPresenter from '../../adapters/presenters/useIncrementPresenter'
 
 const Counter = (): JSX.Element => {
   const [state, { increment, updateUI }] = useIncrementPresenter(
