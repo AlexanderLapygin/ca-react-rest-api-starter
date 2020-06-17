@@ -47,6 +47,8 @@ import caLayerModulesBaseRequired from "./diagrams/caLayerModulesBaseRequired.sv
 import caLayerModulesBase1 from "./diagrams/caLayerModulesBase1.svg";
 import caLayerModulesBase2 from "./diagrams/caLayerModulesBase2.svg";
 
+import umlOutInterface from "./diagrams/umlOutInterface.png";
+
 import counterResetModule from "./diagrams/counterResetModule.svg";
 import counterResetModuleImplementation from "./diagrams/counterResetModuleImplementation.svg";
 
@@ -466,12 +468,38 @@ Clean Architecture*](https://habr.com/ru/company/mobileup/blog/335382/).
 
 ---
 
+<Image src={umlOutInterface} style={{ width: '35vw', height: '80vh'}}/>
+
+<Notes>
+
+Вначале введём важное понятие *выходной интерфейс*.
+
+Почему не получается использовать уже известное понятие *требуемого* (*required*) интерфейса, введённого Мартином
+Фаулером ?
+
+</Notes>
+
+---
 <Image src={layerModule} style={{ width: '102vw', height: '100vh'}}/>
 
 <Notes>
 
-Модуль слоя в принципе обычный модуль. 
+Рассмотрим простую организацию модуля архитектурного слоя. Наиболее показательно такой модуль выглядит для слоя
+адаптеров, поскольку этот слой точно имеет соседний внутренний слой - *Use Cases* - и соседний внешний слой -
+*Infrastructure*. 
 
+Модуль слоя в общем случае реализует некоторое множество интерфейсов, которые назовём здесь *входными* для модуля, и
+использует какое-то множество интерфейсов, которые назовём *выходными* для модуля.
+
+В то время как понятие *входных* интерфейсов почти для всех знакомо - это обычные интерфейсы, определяющие набор
+вызываемых методов в таких языках, как, например, *Java* и *TypeScript*, понятие *выходных* (используемых) интерфейсов
+пока не нашло места для своей формализации в языках программирования (по крайней мере в языках, с которыми знаком автор).
+
+Но в *UML2* 
+
+На рисунке показан самый простой - одномодульный вариант реализации.
+
+...
 </Notes>
 
 ---
@@ -479,9 +507,14 @@ Clean Architecture*](https://habr.com/ru/company/mobileup/blog/335382/).
 <Image src={layerModule1} style={{ width: '102vw', height: '100vh'}}/>
 
 <Notes>
+...
 
-... 
+Но архитектурный слой не обязательно должен быть реализован только одним модулем. Реализации могут быть и более
+сложными, например слой может быть реализован как цепочка модулей или даже ещё более сложно.
 
+Но на внешнем контуре - на стыках с соседними слоями обязательно должно соблюдаться *Правило Зависимостей*.  
+ 
+...
 </Notes>
 
 ---
@@ -489,9 +522,12 @@ Clean Architecture*](https://habr.com/ru/company/mobileup/blog/335382/).
 <Image src={caLayerModulesBase} style={{ width: '102vw', height: '100vh'}}/>
 
 <Notes>
+...
 
-... 
-
+Стоит отметить, что на первой части стека - от *UI* до *Domain* design-time-зависимости направлены к *входным*
+интерфейсам, а на второй половине - к *выходным* - именно в этом месте используется *Принцип Инверсии Зависимостей*.  
+ 
+...
 </Notes>
 
 ---
