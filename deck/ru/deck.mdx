@@ -608,6 +608,78 @@ Adapters*.
 
 ---
 
+<CodeSurferColumns themes={[myTheme, myTheme, myTheme]}>
+
+<Step>
+
+```ts 1,9:10,11[1] file=../../src/adapters/presenters/useIncrementPresenter.ts title="useIncrementPresenter"
+```
+
+```ts 1:11 file=../../src/domain/usecases/CounterIncrement.ts title="CounterIncrement"
+```
+
+```ts 1:2,5 file=../../src/adapters/gateways/CounterIncrementRestGateway.ts title="CounterIncrementRestGateway"
+```
+
+</Step>
+
+</CodeSurferColumns>
+
+
+<Notes>
+
+В качестве примера приведём код *CounterIncrement* - модуля бизнес-логики - из слоя *usecases*.
+
+В начале модуля размещены определения *входного* и *выходного* интерфейсов модуля, названных, соответственно,
+*CounterIncrementIn* и *CounterIncrementOut*.
+
+Стоит отметить, что интерфейс *CounterIncrementOut* является *требуемым* (*required*) интерфейсом для адаптера из соседнего
+внешнего слоя.
+
+...
+
+Далее - за объявлением интерфейсов размещается реализация входного интерфейса, по сути - реализация модуля.
+
+</Notes>
+
+---
+
+<CodeSurferColumns themes={[myTheme, myTheme, myTheme]}>
+
+<Step>
+
+```ts file=../../src/adapters/presenters/useResetPresenter.ts title="useResetPresenter"
+```
+
+```ts 1:3,5:7 file=../../src/domain/usecases/CounterReset.ts title="CounterReset"
+```
+
+```ts file=../../src/adapters/gateways/CounterResetRestGateway.ts title="CounterResetRestGateway"
+```
+
+</Step>
+
+</CodeSurferColumns>
+
+
+<Notes>
+
+В качестве примера приведём код *CounterReset* - модуля бизнес-логики - из слоя *usecases*.
+
+В начале модуля размещены определения *входного* и *выходного* интерфейсов модуля, названных, соответственно,
+*CounterResetIn* и *CounterResetOut*.
+
+Стоит отметить, что интерфейс *CounterResetOut* является *требуемым* (*required*) интерфейсом для адаптера из соседнего
+внешнего слоя.
+
+...
+
+Далее - за объявлением интерфейсов размещается реализация входного интерфейса, по сути - реализация модуля.
+
+</Notes>
+
+---
+
 # Нужен слой адаптера
 
 ---

@@ -1,6 +1,6 @@
-import fetch from 'cross-fetch'
 import { CounterIncrementOut } from '../../domain/usecases'
 import { Counter } from '../../domain/entities'
+import fetch from 'cross-fetch'
 
 export class CounterIncrementRestGateway implements CounterIncrementOut {
   constructor(private readonly endpoint: string) {}
