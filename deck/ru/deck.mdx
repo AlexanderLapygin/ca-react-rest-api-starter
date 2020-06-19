@@ -55,6 +55,7 @@ import counterResetModule from "./diagrams/counterResetModule.svg";
 import counterResetModuleImplementation from "./diagrams/counterResetModuleImplementation.svg";
 
 import counterIncrementModuleImplementation from "./diagrams/CounterIncrementModuleImplementation.svg";
+import counterIncrementRestGateway from "./diagrams/CounterIncrementRestGateway.svg";
 
 import template from "./diagrams/template.svg";
 
@@ -160,7 +161,18 @@ import template from "./diagrams/template.svg";
 
 # Mini FAQ
 
+Сразу хочу предвосхитить тревожные ожидания и успокоить
+
+## Ради чего всё ?
+
 ## Производительность ?
+
+*Чистая Архитектура* не является серебряной пулей, она вряд ли подойдёт любителям хакатонов и рыцарям наколенноого
+кодинга.
+Она для тех, кто играет в долгую.
+А при игре в долгую всё становится на свои места. Чем больше функциональность разрастается и приобретает серьёзный
+масштаб, тем больше *Чистая Архитектура* выигрывает не только в эффективности разработки, но также и в эффективности
+времени выполнения программы, причём и по памяти, и по скорости. И особенно на фронтенде.
 
 ### Накладные расходы ?
 
@@ -660,7 +672,7 @@ Adapters*.
 
 ---
 
-<CodeSurferColumns themes={[naiveTheme, myTheme]}>
+<CodeSurferColumns themes={[myTheme, myTheme]}>
 
 <Step>
 
@@ -680,24 +692,67 @@ Adapters*.
 
 </Step>
 
-
-<Step>
-
-<Image src={counterIncrementModuleImplementation} style={{ width: '100vw', height: '100vh'}}/>
-
-```ts 13:30 file=../../src/domain/usecases/CounterIncrement.ts title="CounterIncrement"
-```
-
-</Step>
-
 </CodeSurferColumns>
-
 
 <Notes>
 
 Рассмотрим модуль *CounterIncrement*, находящийся в директории-слое *usecases*.
 
 Обратите внимание на первую строку - она содержит импорт класса *Counter* из слоя *entities*.
+С точки зрения *Правила Зависимостей* всё правильно: внешний слой *usecases* импортирует из внутреннего - *entities*. 
+
+->
+
+В начале модуля размещены определения его *входного* и *выходного* интерфейсов, названных, соответственно,
+*CounterIncrementIn* и *CounterIncrementOut*.
+
+Оба этих интерфейса экспортируются, чтобы быть импортированы из слоя адаптеров - *adapters*.
+
+Стоит отметить, что интерфейс *CounterIncrementOut* является *требуемым* (*required*) интерфейсом для адаптера-шлюза
+доступа к внешнему сервису, к рассмотрению которого мы немедленно переходим
+
+...
+</Notes>
+
+---
+
+<CodeSurferColumns themes={[myTheme, myTheme]}>
+
+<Step>
+
+<Image src={counterIncrementRestGateway} style={{ width: '100vw', height: '100vh'}}/>
+
+```ts 1 file=../../src/adapters/gateways/counterIncrementRestGateway.ts title="CounterIncrementRestGateway"
+```
+
+</Step>
+
+
+<Step>
+
+<Image src={counterIncrementRestGateway} style={{ width: '100vw', height: '100vh'}}/>
+
+```ts 2,5 file=../../src/adapters/gateways/counterIncrementRestGateway.ts title="CounterIncrementRestGateway"
+```
+
+</Step>
+
+</CodeSurferColumns>
+
+<Notes>
+...
+
+Модуль шлюза *CounterIncrementRestGateway* находится в слое *adapters*.
+
+В его первой строке, как и в только что рассмотренном *CounterIncrement* импортируется класс *Counter* из слоя сущностей.
+В данном случае это пример, когда импорт выполняется хоть из внутреннего, но не из соседнего слоя, то есть импорт
+перескакивает через слой. Оставим это здесь без комментариев.
+
+->
+
+Во второй строке импортируется *выходной* и вдобавок *требуемый* интерфейс модуля с предыдущего слайда -
+*CounterIncrement*, являющегося *входным* для шлюза *CounterIncrementRestGateway*, который его благополучно реализует.
+
 С точки зрения *Правила Зависимостей* всё правильно: внешний слой *usecases* импортирует из внутреннего - *entities*. 
 
 ->
@@ -717,7 +772,6 @@ Adapters*.
 Но для *Правила Зависимостей* реализации не имеют значения, поэтому здесь их не рассматриваем.
 
 </Notes>
-
 
 ---
 
