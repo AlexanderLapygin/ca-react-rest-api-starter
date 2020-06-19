@@ -703,10 +703,10 @@ Adapters*.
 
 <Step>
 
-```ts 1,9:10,11[1] file=../../src/adapters/presenters/useIncrementPresenter.ts title="useIncrementPresenter"
+```ts 1,9:10,11:12,13[1] file=../../src/adapters/presenters/useIncrementPresenter.ts title="useIncrementPresenter"
 ```
 
-```ts 1:11 file=../../src/domain/usecases/CounterIncrement.ts title="CounterIncrement"
+```ts 1:11,13:14 file=../../src/domain/usecases/CounterIncrement.ts title="CounterIncrement"
 ```
 
 ```ts 1:2,5 file=../../src/adapters/gateways/CounterIncrementRestGateway.ts title="CounterIncrementRestGateway"
@@ -720,6 +720,22 @@ Adapters*.
 <Notes>
 
 В качестве примера приведём код *CounterIncrement* - модуля бизнес-логики - из слоя *usecases*.
+
+На слайде представлены модули - представители разных архитектурных слоёв.
+Они показаны вместе, чтобы легче было увидеть их взаимосвязь по зависимостям.
+
+В начале каждого модуля с архитектурной точки зрения находится самое главное: интерфейсы, импорт, экспорт и конструкторы
+(так и должно быть, хотя *TypeScript* этого не требует). Ниже - реализация, но сейчас речь не о ней.  
+
+На слайде у модулей выделены только строки, имеющие отношение к соблюдению *Правила Зависимостей*. 
+
+В центральном столбце размещён *CounterIncrement* - модуль бизнес-логики из слоя *Use Cases*.
+
+По краям - модули из слоя адаптеров: слева - *useIncrementPresenter* - презентер для *React*, реализованный как
+*custom hook*. Справа - *CounterIncrementRestGateway* - шлюз доступа к внешнему сервису, сохраняющему и возвращающему
+текущее состояние счётчика.
+
+...
 
 В начале модуля размещены определения *входного* и *выходного* интерфейсов модуля, названных, соответственно,
 *CounterIncrementIn* и *CounterIncrementOut*.
