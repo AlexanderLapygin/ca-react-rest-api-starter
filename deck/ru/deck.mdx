@@ -622,7 +622,7 @@ Adapters*.
 
 <Image src={counterIncrementModuleImplementation} style={{ width: '100vw', height: '100vh'}}/>
 
-```ts 9:15 file=../../src/domain/usecases/CounterIncrement.ts title="CounterIncrement"
+```ts 13:30 file=../../src/domain/usecases/CounterIncrement.ts title="CounterIncrement"
 ```
 
 </Step>
@@ -633,15 +633,15 @@ Adapters*.
 <Notes>
 
 Как уже говорилось, стартер реализован на *TypeScript*.
-При этом важно отметить, что большая часть решений будет применима и в других языках, особенно в языках, поддерживающих
-статическую типизацию, таких как *Java*, *Kotlin*, *C#* и т.п.   
+При этом важно отметить, что большая часть решений будет применима и в других языках, поддерживающих статическую
+типизацию, таких как *Java*, *Kotlin*, *C#* и т.п.   
 
-В качестве примера приведём код *CounterReset* - модуля бизнес-логики - из слоя *usecases*.
+В качестве примера приведём код *CounterIncrement* - модуля бизнес-логики - из слоя *usecases*.
 
 В начале модуля размещены определения *входного* и *выходного* интерфейсов модуля, названных, соответственно,
-*CounterResetIn* и *CounterResetOut*.
+*CounterIncrementIn* и *CounterIncrementOut*.
 
-Стоит отметить, что интерфейс *CounterResetOut* является *требуемым* (*required*) интерфейсом для адаптера из соседнего
+Стоит отметить, что интерфейс *CounterIncrementOut* является *требуемым* (*required*) интерфейсом для адаптера из соседнего
 внешнего слоя.
 
 ...
@@ -739,13 +739,13 @@ Adapters*.
 
 <Step>
 
-```ts file=../../src/adapters/presenters/useResetPresenter.ts title="useResetPresenter"
+```ts 1,3:6 file=../../src/adapters/presenters/useResetPresenter.ts title="useResetPresenter"
 ```
 
-```ts 1:3,5:7 file=../../src/domain/usecases/CounterReset.ts title="CounterReset"
+```ts 1:3,5:10 file=../../src/domain/usecases/CounterReset.ts title="CounterReset"
 ```
 
-```ts file=../../src/adapters/gateways/CounterResetRestGateway.ts title="CounterResetRestGateway"
+```ts 1,4 file=../../src/adapters/gateways/CounterResetRestGateway.ts title="CounterResetRestGateway"
 ```
 
 </Step>

@@ -1,5 +1,5 @@
-import fetch from 'cross-fetch'
 import { CounterResetOut } from '../../domain/usecases/CounterReset'
+import fetch from 'cross-fetch'
 
 export class CounterResetRestGateway implements CounterResetOut {
   constructor(private readonly endpoint: string) {}
