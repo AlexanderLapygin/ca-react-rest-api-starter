@@ -969,17 +969,34 @@ Cases*).
 
 <Image src={useIncrementPresenter} style={{ width: '100vw', height: '100vh'}}/>
 
-```ts 1 file=../../src/adapters/presenters/useIncrementPresenter.ts title="useIncrementPresenter"
+```ts file=../../src/adapters/presenters/useIncrementPresenter.ts title="useIncrementPresenter"
 ```
 
 </Step>
-
 
 <Step>
 
 <Image src={useIncrementPresenter} style={{ width: '100vw', height: '100vh'}}/>
 
 ```ts 1 file=../../src/adapters/presenters/useIncrementPresenter.ts title="useIncrementPresenter"
+```
+
+</Step>
+
+<Step>
+
+<Image src={useIncrementPresenter} style={{ width: '100vw', height: '100vh'}}/>
+
+```ts 1,9:10 file=../../src/adapters/presenters/useIncrementPresenter.ts title="useIncrementPresenter"
+```
+
+</Step>
+
+<Step>
+
+<Image src={useIncrementPresenter} style={{ width: '100vw', height: '100vh'}}/>
+
+```ts 2 file=../../src/adapters/presenters/useIncrementPresenter.ts title="useIncrementPresenter"
 ```
 
 </Step>
@@ -993,40 +1010,51 @@ Cases*).
 Как и модуль шлюза, *useIncrementPresenter* также находится в слое *adapters*, но, в отличие от шлюза, поскольку
 реализован *React*-хуком, является не классом, а функцией.
 
+->
+
+В первой строке импортируется входной интерфейс *CounterIncrementIn* уже знакомого модуля *CounterIncrement* из слоя
+*usecases*.
+
+->
+
+Этот интерфейс в качестве аргумента передаётся в главную функцию модуля, чем осуществляется своеобразная *инъекция
+зависимости*.
+
+->
+
+Вторая строка импортирует всё то, что необходимое для взаимодействия с *React*.
+
+Но, как обещалось в самом начале, на *React*-специфичных деталях здесь останавливаться не будем.
+
+...
 </Notes>
 
 ---
 
-<CodeSurferColumns themes={[myTheme]}>
+<CodeSurferColumns themes={[myTheme, myTheme]}>
 
 <Step>
 
-```ts file=../../src/index.tsx title="index.tsx"
-```
+<Image src={useIncrementPresenter} style={{ width: '100vw', height: '100vh'}}/>
 
-</Step>
-
-<Step>
-
-```ts file=../../src/infrastructure/ui/App.tsx title="App.tsx"
-```
-
-</Step>
-
-<Step>
-
-```ts file=../../src/infrastructure/ui/Counter.tsx title="Counter.tsx"
+```ts 1:2 file=../../src/adapters/presenters/useIncrementPresenter.ts title="useIncrementPresenter"
 ```
 
 </Step>
 
 </CodeSurferColumns>
 
+<Notes>
+...
+
+Заметим лишь, что модуль любого адаптера своими импортами всегда одной ногой стоит во внешнем для себя слое (в данном
+случае *UI* *React*), а другой ногой - во внутреннем (в данном случае *usecases*).
+
+</Notes>
+
 ---
 
-# Пожелания
-
-### Давайте вместе работать над нашими стартерами - эталонными приложениями для того, чтобы делать код всё более совершенным
+# На этом пока всё
 
 ---
 
