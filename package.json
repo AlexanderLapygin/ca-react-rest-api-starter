@@ -4,7 +4,9 @@
   "private": true,
   "scripts": {
     "start": "mdx-deck deck/ru/deck.mdx",
-    "build": "react-scripts build",
+    "start-app": "react-scripts start",
+    "build": "mdx-deck build deck/ru/deck.mdx",
+    "build-app": "react-scripts build",
     "test": "react-scripts test",
     "test-snapshot-update": "react-scripts test -u",
     "test:coverage": "react-scripts test --watchAll=false --coverage",
