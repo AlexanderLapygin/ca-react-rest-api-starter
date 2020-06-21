@@ -3,15 +3,15 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "start": "react-scripts start",
+    "start": "mdx-deck deck/ru/deck.mdx",
+    "start-app": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "test-snapshot-update": "react-scripts test -u",
     "test:coverage": "react-scripts test --watchAll=false --coverage",
     "eject": "react-scripts eject",
     "lint": "eslint './src/**/*.{ts,tsx}'",
-    "lint:fix": "eslint --fix './src/**/*.{ts,tsx}'",
-    "start-deck": "mdx-deck deck/ru/deck.mdx"
+    "lint:fix": "eslint --fix './src/**/*.{ts,tsx}'"
   },
   "dependencies": {
     "@types/jest": "25.2.3",
