@@ -67,6 +67,7 @@ import counterResetModuleImplementation from "./diagrams/counterResetModuleImple
 
 import counterIncrementModuleImplementation from "./diagrams/CounterIncrementModuleImplementation.svg";
 import counterIncrementRestGateway from "./diagrams/CounterIncrementRestGateway.svg";
+import useIncrementPresenter from "./diagrams/useIncrementPresenter.svg";
 
 import template from "./diagrams/template.svg";
 
@@ -957,6 +958,40 @@ Cases*).
 
 Во второй строке импортируется *выходной* и вдобавок *требуемый* интерфейс модуля с предыдущего слайда -
 *CounterIncrement*, являющегося *входным* для шлюза *CounterIncrementRestGateway*, который его благополучно реализует.
+
+</Notes>
+
+---
+
+<CodeSurferColumns themes={[myTheme, myTheme]}>
+
+<Step>
+
+<Image src={useIncrementPresenter} style={{ width: '100vw', height: '100vh'}}/>
+
+```ts 1 file=../../src/adapters/presenters/useIncrementPresenter.ts title="useIncrementPresenter"
+```
+
+</Step>
+
+
+<Step>
+
+<Image src={useIncrementPresenter} style={{ width: '100vw', height: '100vh'}}/>
+
+```ts 1 file=../../src/adapters/presenters/useIncrementPresenter.ts title="useIncrementPresenter"
+```
+
+</Step>
+
+</CodeSurferColumns>
+
+<Notes>
+
+В заключение рассмотрим адаптер пользовательского интерфейса - презентер *useIncrementPresenter*.
+
+Как и модуль шлюза, *useIncrementPresenter* также находится в слое *adapters*, но, в отличие от шлюза, поскольку
+реализован *React*-хуком, является не классом, а функцией.
 
 </Notes>
 
