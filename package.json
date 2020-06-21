@@ -1,5 +1,5 @@
 {
-  "name": "cleanarchitecture-react-fullstack-starter",
+  "name": "ca-react-rest-api-starter",
   "version": "1.0.0",
   "private": true,
   "scripts": {
@@ -23,7 +23,6 @@
     "dotenv": "^8.2.0",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
-    "react-scripts": "3.1.2",
     "typescript": "3.9.5"
   },
   "devDependencies": {
