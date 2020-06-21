@@ -14,23 +14,6 @@ import {
 
 import myTheme from './lib/theme'
 export const theme = myTheme
-//export const theme = smartTheme;
-
-import beach from "./diagrams/beach.jpg";
-import konyuhov1 from "./diagrams/konyuhov1.jpg";
-import konyuhov2 from "./diagrams/konyuhov2.jpg";
-import konyuhov3 from "./diagrams/konyuhov3.jpg";
-import konyuhov4 from "./diagrams/konyuhov4.jpg";
-import konyuhov5 from "./diagrams/konyuhov5.jpg";
-import konyuhov6 from "./diagrams/konyuhov6.jpg";
-import konyuhov61 from "./diagrams/konyuhov61.jpg";
-import konyuhov7 from "./diagrams/konyuhov7.jpg";
-import nakedInMountains from "./diagrams/nakedInMountains.jpg";
-import modulesCosmicStation from "./diagrams/modulesCosmicStation.jpg";
-import legoModules from "./diagrams/legoModules.png";
-
- 
-import climbersBunch2 from "./diagrams/climbersBunch2.jpg";
 
 import bicycleVsTrain from "./diagrams/bicycleVsTrain.jpg";
 
@@ -60,16 +43,12 @@ import caLayerModulesBaseRequired from "./diagrams/caLayerModulesBaseRequired.sv
 import caLayerModulesBase1 from "./diagrams/caLayerModulesBase1.svg";
 import caLayerModulesBase2 from "./diagrams/caLayerModulesBase2.svg";
 
-import umlOutInterface from "./diagrams/umlOutInterface.png";
-
 import counterResetModule from "./diagrams/counterResetModule.svg";
 import counterResetModuleImplementation from "./diagrams/counterResetModuleImplementation.svg";
 
 import counterIncrementModuleImplementation from "./diagrams/CounterIncrementModuleImplementation.svg";
 import counterIncrementRestGateway from "./diagrams/CounterIncrementRestGateway.svg";
 import useIncrementPresenter from "./diagrams/useIncrementPresenter.svg";
-
-import template from "./diagrams/template.svg";
 
 <Head>
   <title>Стартер для Чистой Архитектуры</title>
@@ -184,7 +163,7 @@ import template from "./diagrams/template.svg";
 
 Как ни парадоксально, но по большому счёту главная тема *Чистой Архитектуры* это производительность.
 
-Но при этом нужно понимать, какую производительность мы измеряем, правильно выбирать условия её измерения и очень важно
+При этом, конечно, нужно понимать, какую производительность мы измеряем, правильно выбирать условия её измерения и очень важно
 избегать некорректных сравнений.
 
 ...
@@ -202,9 +181,10 @@ import template from "./diagrams/template.svg";
 
 *Хакатон*, если кто не знает, это своего рода спорт для программистов, предполагающий разработку программного решения в
 условиях ограниченного времени, обычно в пределах одной-двух недель. Вот только его неправильно называют *хакерским
-марафоном*, конечно, это не марафон, а спринт.
+марафоном*. Это не марафон, конечно, а спринт.
 
-Так вот, при старте с места велосипед, конечно, выиграет у поезда на дистанции 100 метров. Выиграет и на 200, и на 1000.
+Так вот, при старте с места велосипед без вопросов выиграет у поезда на дистанции 100 метров. Выиграет и на 200, и на
+1000.
 
 Но уже на 10 км у велосипеда просто не будет никаких шансов.
 
@@ -214,14 +194,14 @@ import template from "./diagrams/template.svg";
 ---
 <Image src={bicycleVsTrain} style={{ width: '60vw', height: '70vh'}}/>
 
-*Чистая Архитектура* предназначена для "игры в долгую"
+*Чистая Архитектура* - для "игры в долгую"
 
 <Notes>
 ...
 
 *Чистая Архитектура* предназначена для серьёзных масштабируемых post-MVP-решений, когда начинается "игра в долгую".
 
-*Чистая Архитектура* повышает скорость стайера, она масштабирует скорость разработки на длинных дистанциях.
+*Чистая Архитектура* повышает скорость не спринтера, а стайера, масштабируя скорость разработки на длинных дистанциях.
 
 При игре в долгую всё становится на свои места. Чем больше функциональность разрастается и приобретает серьёзный
 масштаб, тем больше правила *Чистой Архитектуры* начинают выигрывать - вначале в скорости разработки, затем - в скорости
@@ -253,6 +233,7 @@ import template from "./diagrams/template.svg";
 
 Ключевые свойства стартера:
 
+...
 </Notes>
 
 ---
@@ -1076,120 +1057,6 @@ Cases*).
 
 - [Презентация *О Принципе Инверсии Зависимостей*](https://csb-9kg5y-8d0n41fyp.now.sh)
 - [*Заблуждения Clean Architecture*](https://habr.com/ru/company/mobileup/blog/335382/)
-
----
-
-# Вспомогательные материалы
-
----
-
-<Image src={template} style={{ width: '102vw', height: '100vh'}}/>
-
-<Notes>
-Это шаблон слайда с заголовком и подписью
-</Notes>
-
----
-
-<Image src={beach} style={{ width: '30vw', height: '80vh'}}/>
-
----
-
-<Image src={konyuhov1} style={{ width: '30vw', height: '80vh'}}/>
-
----
-
-<Image src={konyuhov2} style={{ width: '70vw', height: '70vh'}}/>
-
----
-
-<Image src={konyuhov3} style={{ width: '55vw', height: '80vh'}}/>
-
----
-
-<Image src={konyuhov4} style={{ width: '60vw', height: '80vh'}}/>
-
----
-
-<Image src={konyuhov5} style={{ width: '70vw', height: '80vh'}}/>
-
----
-
-<Image src={konyuhov61} style={{ width: '30vw', height: '80vh'}}/>
-
----
-
-<Image src={konyuhov7} style={{ width: '30vw', height: '80vh'}}/>
-
----
-
-<CodeSurferColumns themes={[naiveTheme, naiveTheme]}>
-
-<Step>
-
-<Image src={konyuhov1} style={{ width: '30vw', height: '80vh'}}/>
-
-<Image src={konyuhov61} style={{ width: '30vw', height: '80vh'}}/>
-
-</Step>
-
-</CodeSurferColumns>
-
----
-
-<Image src={nakedInMountains} style={{ width: '60vw', height: '80vh'}}/>
-
----
-
-<Image src={climbersBunch2} style={{ width: '60vw', height: '80vh'}}/>
-
-<Notes>
-
-"Но мы выбираем трудный путь..."
-
-На самом деле он оптимальный.
-
-Что мы оптимизируем ?
-
-Масштабирование во времени - устойчивость развития.
-
-</Notes>
-
----
-
-<p style="font-size: 130px; text-align:center; padding-bottom:140px;">
-<i>Правило Зависимостей</i>
-<br/>
-и модули
-</p>
-
-<Notes>
-...
-
- *Правило Зависимостей*
-
-...
-</Notes>
-
----
-
-<CodeSurferColumns themes={[naiveTheme, naiveTheme]}>
-
-<Step>
-
-<Image src={modulesCosmicStation} style={{ width: '100vw', height: '70vh'}}/>
-
-<Image src={legoModules} style={{ width: '50vw', height: '70vh'}}/>
-
-</Step>
-
-</CodeSurferColumns>
-
-<Notes>
-
-Что общего в этих изображениях ?
-
-</Notes>
 
 ---
 
