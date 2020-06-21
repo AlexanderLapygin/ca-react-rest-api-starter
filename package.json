@@ -4,7 +4,6 @@
   "private": true,
   "scripts": {
     "start": "mdx-deck deck/ru/deck.mdx",
-    "start-app": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "test-snapshot-update": "react-scripts test -u",
