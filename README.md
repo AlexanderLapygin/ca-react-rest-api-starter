@@ -12,7 +12,7 @@ It is the client part of the [Fullstack counter-app starter on React in TypeScri
 
 ## Presentation
 
-[Starter for Clean Architecture](https://vercel.com/alexanderlapygin/ca-react-rest-api-starter)
+[Starter for Clean Architecture](https://ca-react-rest-api-starter.vercel.app/)
 
 ---
 
