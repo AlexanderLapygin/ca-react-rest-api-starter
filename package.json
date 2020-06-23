@@ -9,10 +9,7 @@
     "build-app": "react-scripts build",
     "test": "react-scripts test",
     "test-snapshot-update": "react-scripts test -u",
-    "test:coverage": "react-scripts test --watchAll=false --coverage",
-    "eject": "react-scripts eject",
-    "lint": "eslint './src/**/*.{ts,tsx}'",
-    "lint:fix": "eslint --fix './src/**/*.{ts,tsx}'"
+    "test:coverage": "react-scripts test --watchAll=false --coverage"
   },
   "dependencies": {
     "@types/jest": "25.2.3",
@@ -63,11 +60,11 @@
   "jest": {
     "collectCoverageFrom": [
       "src/**/*.{js,jsx,ts,tsx}",
-      "!./node_modules/",
-      "!./src/index.tsx",
-      "!./src/serviceWorker.ts",
-      "!./src/**/index.ts",
-      "!./src/**/*.d.ts",
+      "!**/node_modules/**",
+      "!**/src/index.tsx",
+      "!**/src/serviceWorker.ts",
+      "!**/src/**/index.ts",
+      "!**/src/**/*.d.ts",
       "not dead"
     ],
     "coverageReporters": [
