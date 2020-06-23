@@ -10,7 +10,9 @@ It is the client part of the [Fullstack counter-app starter on React in TypeScri
 
 ---
 
-https://vercel.com/alexanderlapygin/ca-react-rest-api-starter
+## Presentation
+
+[Starter for Clean Architecture](https://ca-react-rest-api-starter.vercel.app/)
 
 ---
 
@@ -65,7 +67,7 @@ In separate browser tabs do:
 
 <p align="center">
   <a href="https://github.com/softspider">
-    <img src="./diagrams/packages.uml.svg" width="600"/>
+    <img src="./diagrams/packages-uml.svg" width="600"/>
   </a>
   </br>
   <b>Package structure</b>
