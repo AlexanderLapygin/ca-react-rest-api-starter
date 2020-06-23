@@ -67,7 +67,7 @@ In separate browser tabs do:
 
 <p align="center">
   <a href="https://github.com/softspider">
-    <img src="./diagrams/packages.uml.svg" width="600"/>
+    <img src="./diagrams/packages-uml.svg" width="600"/>
   </a>
   </br>
   <b>Package structure</b>
