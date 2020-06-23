@@ -10,7 +10,9 @@ It is the client part of the [Fullstack counter-app starter on React in TypeScri
 
 ---
 
-https://vercel.com/alexanderlapygin/ca-react-rest-api-starter
+## Presentation
+
+[Starter for Clean Architecture](https://vercel.com/alexanderlapygin/ca-react-rest-api-starter)
 
 ---
 
