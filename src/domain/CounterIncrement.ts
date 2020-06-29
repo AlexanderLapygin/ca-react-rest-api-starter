@@ -1,4 +1,4 @@
-import { Counter } from '../entities'
+import { Counter } from "./Counter";
 
 export interface CounterIncrementIn {
   getCounter(): Promise<number>

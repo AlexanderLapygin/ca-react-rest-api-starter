@@ -1,13 +1,13 @@
-import { Counter } from '../../entities'
-import { AdapterFactory } from '../../../adapters'
+import { Counter } from '../index'
+import { AppFactory } from "../../AppFactory";
 
 describe('CounterReset', () => {
   const COUNTER_VALUE = 99
   const SOME_COUNTER = new Counter(-1)
   describe('CounterResetIn', () => {
-    let useCaseFactory: AdapterFactory
+    let useCaseFactory: AppFactory
     beforeAll(() => {
-      useCaseFactory = new AdapterFactory()
+      useCaseFactory = new AppFactory()
     })
 
     describe('reset()', () => {

@@ -1,5 +1,5 @@
-import { Counter } from '../../domain/entities'
-import { CounterIncrementOut } from '../../domain/usecases'
+import { Counter } from '../../../domain'
+import { CounterIncrementOut } from '../../../domain'
 import fetch from 'cross-fetch'
 
 export class CounterIncrementRestGateway implements CounterIncrementOut {

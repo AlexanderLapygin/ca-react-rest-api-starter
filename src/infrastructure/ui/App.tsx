@@ -1,8 +1,8 @@
 import React from 'react'
 import Counter from './Counter'
-import { AdapterFactory } from '../../adapters'
+import { AppFactory } from "../../AppFactory";
 
-export const adapterFactory = new AdapterFactory()
+export const appFactory = new AppFactory()
 
 const App = (): JSX.Element => <Counter />
 

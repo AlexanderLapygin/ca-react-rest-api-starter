@@ -1,4 +1,4 @@
-import { CounterIncrementIn } from '../../domain/usecases'
+import { CounterIncrementIn } from '../../../domain'
 import { useCallback, useEffect, useState } from 'react'
 
 export interface IncrementPresenterAPI {

@@ -1,14 +1,14 @@
 import React from 'react'
-import { adapterFactory } from './App'
-import useResetPresenter from '../../adapters/presenters/useResetPresenter'
-import useIncrementPresenter from '../../adapters/presenters/useIncrementPresenter'
+import { appFactory } from './App'
+import useResetPresenter from './presenters/useResetPresenter'
+import useIncrementPresenter from './presenters/useIncrementPresenter'
 
 const Counter = (): JSX.Element => {
   const [state, { increment, updateUI }] = useIncrementPresenter(
-    adapterFactory.getCounterIncrementIn()
+    appFactory.getCounterIncrementIn()
   )
   const { reset } = useResetPresenter(
-    adapterFactory.getCounterResetIn(),
+    appFactory.getCounterResetIn(),
     updateUI
   )
 

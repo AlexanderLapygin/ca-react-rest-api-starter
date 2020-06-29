@@ -1,5 +1,5 @@
 import { renderHook, act } from '@testing-library/react-hooks'
-import { CounterIncrementIn } from '../../../domain/usecases'
+import { CounterIncrementIn } from '../../../../domain'
 import useIncrementPresenter from '../useIncrementPresenter'
 
 describe('useIncrementPresenter', () => {

@@ -1,5 +1,5 @@
 import { CounterIncrementRestGateway } from '../CounterIncrementRestGateway'
-import { Counter } from '../../../domain/entities'
+import { Counter } from '../../../../domain'
 
 describe('CounterIncrementOutRestGateway', () => {
   const ENDPOINT = 'endpoint'

@@ -1,4 +1,4 @@
-import { CounterResetIn } from '../../domain/usecases/CounterReset'
+import { CounterResetIn } from '../../../domain/CounterReset'
 import { useCallback } from 'react'
 
 export interface ResetPresenterAPI {

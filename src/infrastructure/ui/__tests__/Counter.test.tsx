@@ -1,11 +1,11 @@
 import { render, fireEvent } from '@testing-library/react'
 import Counter from '../Counter'
 import React from 'react'
-import useIncrementPresenter from '../../../adapters/presenters/useIncrementPresenter'
-import useResetPresenter from '../../../adapters/presenters/useResetPresenter'
+import useIncrementPresenter from '../presenters/useIncrementPresenter'
+import useResetPresenter from '../presenters/useResetPresenter'
 
-jest.mock('../../../adapters/presenters/useIncrementPresenter')
-jest.mock('../../../adapters/presenters/useResetPresenter')
+jest.mock('../presenters/useIncrementPresenter')
+jest.mock('../presenters/useResetPresenter')
 
 const SOME_VALUE = 99
 

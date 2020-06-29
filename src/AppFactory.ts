@@ -2,20 +2,20 @@ import {
   CounterIncrement,
   CounterIncrementIn,
   CounterIncrementOut
-} from '../domain/usecases'
+} from './domain'
 
 import {
   CounterReset,
   CounterResetIn,
   CounterResetOut
-} from '../domain/usecases/CounterReset'
+} from './domain/CounterReset'
 
 import {
   CounterResetRestGateway,
   CounterIncrementRestGateway
-} from './gateways'
+} from './infrastructure/rest/gateways'
 
-export class AdapterFactory {
+export class AppFactory {
   private readonly counterIncrementIn: CounterIncrementIn
   private readonly counterIncrementOut: CounterIncrementRestGateway
 

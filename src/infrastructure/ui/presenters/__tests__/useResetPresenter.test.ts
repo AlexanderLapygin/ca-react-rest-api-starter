@@ -1,6 +1,6 @@
 // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
 // @ts-ignore
-import { CounterResetIn } from '../../../domain/usecases'
+import { CounterResetIn } from '../../../../domain'
 import { renderHook, act } from '@testing-library/react-hooks'
 import useResetPresenter from '../useResetPresenter'
 

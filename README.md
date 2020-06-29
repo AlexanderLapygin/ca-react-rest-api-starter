@@ -10,6 +10,15 @@ It is the client part of the [Fullstack counter-app starter on React in TypeScri
 
 ---
 
+## Demo
+Demo and server are both hosted on the *Codesandbox*.
+
+In separate browser tabs do:
+1. [Start server](https://xg4qv.sse.codesandbox.io)
+2. [Start demo](https://pzpw2.csb.app/)
+
+---
+
 ## Presentation
 
 [Starter for Clean Architecture](https://ca-react-rest-api-starter.vercel.app/)
@@ -45,14 +54,6 @@ It is the client part of the [Fullstack counter-app starter on React in TypeScri
 
 ---
 
-## Demo
-Demo and server are both hosted on the *Codesandbox*.
-
-In separate browser tabs do:
-1. [Start server](https://xg4qv.sse.codesandbox.io)
-2. [Start demo](https://pzpw2.csb.app/)
-
----
 ## Author
 
 [Alexander Lapygin](https://github.com/AlexanderLapygin) <<alexanderlapygin@gmail.com>>
