@@ -19,8 +19,7 @@
     "cross-fetch": "^3.0.4",
     "dotenv": "^8.2.0",
     "react": "^16.9.0",
-    "react-dom": "^16.9.0",
-    "typescript": "3.9.5"
+    "react-dom": "^16.9.0"
   },
   "devDependencies": {
     "@testing-library/dom": "^7.10.1",
@@ -37,7 +36,8 @@
     "jest-fetch-mock": "^3.0.3",
     "mdx-deck": "3.0.10",
     "prettier": "^1.18.2",
-    "react-test-renderer": "^16.9.0"
+    "react-test-renderer": "^16.9.0",
+    "typescript": "3.9.5"
   },
   "keywords": [
     "adapter",

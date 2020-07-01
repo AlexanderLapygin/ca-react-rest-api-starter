@@ -1,8 +1,8 @@
 import React from 'react'
-import { render, cleanup } from '@testing-library/react'
 import App from '../App'
 import useIncrementPresenter from '../presenters/useIncrementPresenter'
 import useResetPresenter from '../presenters/useResetPresenter'
+import { render } from '@testing-library/react'
 
 jest.mock('../presenters/useIncrementPresenter')
 jest.mock('../presenters/useResetPresenter')
