@@ -1,5 +1,5 @@
 import { Counter } from '../index'
-import { AppFactory } from "../../AppFactory";
+import { AppFactory } from '../../AppFactory'
 
 describe('CounterIncrement', () => {
   const COUNTER_VALUE = 99
@@ -12,11 +12,16 @@ describe('CounterIncrement', () => {
     describe('getCounter()', () => {
       it('should return right value', async () => {
         const getCounterSpy = jest
-          .spyOn(useCaseFactory.getCounterIncrementOut(), 'getCounter')
+          .spyOn(
+            useCaseFactory.getCounterIncrementOut(),
+            'getCounter'
+          )
           .mockResolvedValue(new Counter(COUNTER_VALUE))
-        expect(await useCaseFactory.getCounterIncrementIn().getCounter()).toBe(
-          COUNTER_VALUE
-        )
+        expect(
+          await useCaseFactory
+            .getCounterIncrementIn()
+            .getCounter()
+        ).toBe(COUNTER_VALUE)
 
         getCounterSpy.mockRestore()
       })
@@ -25,14 +30,22 @@ describe('CounterIncrement', () => {
     describe('increment()', () => {
       it('should call updateCounter with right value', async () => {
         const getCounterSpy = jest
-          .spyOn(useCaseFactory.getCounterIncrementOut(), 'getCounter')
+          .spyOn(
+            useCaseFactory.getCounterIncrementOut(),
+            'getCounter'
+          )
           .mockResolvedValue(new Counter(COUNTER_VALUE))
 
         const updateCounterSpy = jest
-          .spyOn(useCaseFactory.getCounterIncrementOut(), 'updateCounter')
+          .spyOn(
+            useCaseFactory.getCounterIncrementOut(),
+            'updateCounter'
+          )
           .mockResolvedValue(SOME_COUNTER)
 
-        await useCaseFactory.getCounterIncrementIn().increment()
+        await useCaseFactory
+          .getCounterIncrementIn()
+          .increment()
 
         expect(updateCounterSpy).toHaveBeenCalledTimes(1)
         expect(updateCounterSpy).toHaveBeenCalledWith(
@@ -44,15 +57,23 @@ describe('CounterIncrement', () => {
       })
       it('should return right value', async () => {
         const getCounterSpy = jest
-          .spyOn(useCaseFactory.getCounterIncrementOut(), 'getCounter')
+          .spyOn(
+            useCaseFactory.getCounterIncrementOut(),
+            'getCounter'
+          )
           .mockResolvedValue(new Counter(COUNTER_VALUE))
 
         const updateCounterSpy = jest
-          .spyOn(useCaseFactory.getCounterIncrementOut(), 'updateCounter')
+          .spyOn(
+            useCaseFactory.getCounterIncrementOut(),
+            'updateCounter'
+          )
           .mockResolvedValue(new Counter(COUNTER_VALUE + 1))
 
         expect(
-          await useCaseFactory.getCounterIncrementIn().increment()
+          await useCaseFactory
+            .getCounterIncrementIn()
+            .increment()
         ).toEqual(COUNTER_VALUE + 1)
 
         getCounterSpy.mockRestore()
