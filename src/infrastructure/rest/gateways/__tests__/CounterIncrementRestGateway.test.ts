@@ -15,29 +15,45 @@ describe('CounterIncrementOutRestGateway', () => {
     it('Should perform the /counter request, and only once', async () => {
       fetchMock.mockResponses([JSON.stringify([{}]), {}])
 
-      const counterGateway = new CounterIncrementRestGateway(ENDPOINT_URL)
+      const counterGateway = new CounterIncrementRestGateway(
+        ENDPOINT_URL
+      )
       await counterGateway.getCounter()
 
       expect(fetchMock).toHaveBeenCalledTimes(1)
-      expect(fetchMock.mock.calls[0][0]).toEqual(`${ENDPOINT_URL}/counter`)
+      expect(fetchMock.mock.calls[0][0]).toEqual(
+        `${ENDPOINT_URL}/counter`
+      )
     })
 
     it('Should return the correct value corresponding to the http-response', async () => {
       fetchMock.mockResponseOnce(
-        JSON.stringify([{ counter: COUNTER_VALUE, id: COUNTER_ID }])
+        JSON.stringify([
+          { counter: COUNTER_VALUE, id: COUNTER_ID },
+        ])
       )
 
-      const counterGateway = new CounterIncrementRestGateway(ENDPOINT_URL)
-      expect((await counterGateway.getCounter()).counter).toBe(COUNTER_VALUE)
+      const counterGateway = new CounterIncrementRestGateway(
+        ENDPOINT_URL
+      )
+      expect(
+        (await counterGateway.getCounter()).counter
+      ).toBe(COUNTER_VALUE)
     })
     it('Should throw an error when status not Ok', async () => {
       fetchMock.mockResponseOnce(
-        JSON.stringify([{ counter: COUNTER_VALUE, id: COUNTER_ID }]),
+        JSON.stringify([
+          { counter: COUNTER_VALUE, id: COUNTER_ID },
+        ]),
         { status: 400 }
       )
 
-      const counterGateway = new CounterIncrementRestGateway(ENDPOINT_URL)
-      await expect(counterGateway.getCounter()).rejects.toThrowError()
+      const counterGateway = new CounterIncrementRestGateway(
+        ENDPOINT_URL
+      )
+      await expect(
+        counterGateway.getCounter()
+      ).rejects.toThrowError()
     })
   })
 
@@ -45,8 +61,12 @@ describe('CounterIncrementOutRestGateway', () => {
     it('Should perform the /counter/id request, and only once', async () => {
       fetchMock.mockResponses([JSON.stringify([{}]), {}])
 
-      const counterGateway = new CounterIncrementRestGateway(ENDPOINT_URL)
-      await counterGateway.updateCounter(new Counter(COUNTER_VALUE))
+      const counterGateway = new CounterIncrementRestGateway(
+        ENDPOINT_URL
+      )
+      await counterGateway.updateCounter(
+        new Counter(COUNTER_VALUE)
+      )
 
       expect(fetchMock).toHaveBeenCalledTimes(1)
       expect(fetchMock.mock.calls[0][0]).toEqual(
@@ -55,25 +75,38 @@ describe('CounterIncrementOutRestGateway', () => {
     })
     it('Should return the correct value corresponding to the http-response', async () => {
       fetchMock.mockResponseOnce(
-        JSON.stringify({ counter: COUNTER_VALUE, id: COUNTER_ID })
+        JSON.stringify({
+          counter: COUNTER_VALUE,
+          id: COUNTER_ID,
+        })
       )
 
-      const counterGateway = new CounterIncrementRestGateway(ENDPOINT_URL)
-      const counter = (await counterGateway.updateCounter(
-        new Counter(COUNTER_VALUE)
-      )).counter
+      const counterGateway = new CounterIncrementRestGateway(
+        ENDPOINT_URL
+      )
+      const counter = (
+        await counterGateway.updateCounter(
+          new Counter(COUNTER_VALUE)
+        )
+      ).counter
 
       expect(counter).toBe(COUNTER_VALUE)
     })
     it('Should throw an error when status not Ok', async () => {
       fetchMock.mockResponseOnce(
-        JSON.stringify([{ counter: COUNTER_VALUE, id: COUNTER_ID }]),
+        JSON.stringify([
+          { counter: COUNTER_VALUE, id: COUNTER_ID },
+        ]),
         { status: 400 }
       )
 
-      const counterGateway = new CounterIncrementRestGateway(ENDPOINT_URL)
+      const counterGateway = new CounterIncrementRestGateway(
+        ENDPOINT_URL
+      )
       await expect(
-        counterGateway.updateCounter(new Counter(COUNTER_VALUE))
+        counterGateway.updateCounter(
+          new Counter(COUNTER_VALUE)
+        )
       ).rejects.toThrowError()
     })
   })
