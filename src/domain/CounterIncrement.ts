@@ -1,4 +1,4 @@
-import { Counter } from "./Counter";
+import { Counter } from './Counter'
 
 export interface CounterIncrementIn {
   getCounter(): Promise<number>
@@ -21,9 +21,7 @@ export class CounterIncrement implements CounterIncrementIn {
   async increment(): Promise<number> {
     const currentCounter: Counter = await this.counterIncrementOut.getCounter()
     const newCounter: Counter = new Counter(currentCounter.counter + 1)
-    const resultCounter: Counter = await this.counterIncrementOut.updateCounter(
-      newCounter
-    )
+    const resultCounter: Counter = await this.counterIncrementOut.updateCounter(newCounter)
 
     return resultCounter.counter
   }

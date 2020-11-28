@@ -15,10 +15,16 @@ describe('CounterIncrementOutRestGateway', () => {
     it('Should perform the /counter request, and only once', async () => {
       fetchMock.mockResponses([JSON.stringify([{}]), {}])
 
+      console.log(
+        'CounterIncrementRestGateway.test: ENDPOINT_URL = ' +
+          ENDPOINT_URL
+      )
       const counterGateway = new CounterIncrementRestGateway(
         ENDPOINT_URL
       )
+      console.log('CounterIncrementRestGateway.test: BEFORE await counterGateway.getCounter()')
       await counterGateway.getCounter()
+      console.log('CounterIncrementRestGateway.test: AFTER await counterGateway.getCounter()')
 
       expect(fetchMock).toHaveBeenCalledTimes(1)
       expect(fetchMock.mock.calls[0][0]).toEqual(
